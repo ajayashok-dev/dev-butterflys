@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#1f4d3d"/>
+  <path d="M0 660C180 610 340 600 520 640C700 680 980 760 1240 720C1360 700 1480 660 1600 620V900H0Z" fill="#2f855a"/>
+  <path d="M120 690C250 560 410 540 560 600C700 650 860 720 1020 710C1250 698 1420 600 1560 540" fill="none" stroke="#f7dc6f" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="1280" cy="240" r="130" fill="#ffffff" opacity="0.12"/>
+  <text x="140" y="180" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Wayanad</text>
+  <text x="140" y="250" fill="#d1fae5" font-family="Segoe UI, Arial, sans-serif" font-size="34">Lakes, caves, and misty hills</text>
+</svg>

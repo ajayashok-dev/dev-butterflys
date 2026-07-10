@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0f766e"/>
+  <path d="M0 690L200 620L380 665L560 610L760 680L980 610L1200 685L1600 620V900H0Z" fill="#166534"/>
+  <path d="M120 710C280 600 480 560 650 610C820 660 1040 740 1260 700C1380 678 1490 642 1600 600" fill="none" stroke="#fde68a" stroke-width="16" stroke-linecap="round"/>
+  <text x="140" y="180" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Munnar</text>
+  <text x="140" y="250" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="34">Tea valleys and cool mountain air</text>
+</svg>

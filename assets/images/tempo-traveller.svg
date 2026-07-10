@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#e0f2fe"/>
+  <rect x="0" y="560" width="1200" height="240" fill="#bae6fd"/>
+  <rect x="120" y="220" width="900" height="270" rx="70" fill="#0f766e"/>
+  <rect x="220" y="180" width="320" height="140" rx="40" fill="#f8fafc"/>
+  <rect x="590" y="180" width="250" height="140" rx="40" fill="#f8fafc"/>
+  <circle cx="360" cy="560" r="100" fill="#111827"/>
+  <circle cx="840" cy="560" r="100" fill="#111827"/>
+  <circle cx="360" cy="560" r="50" fill="#f8fafc"/>
+  <circle cx="840" cy="560" r="50" fill="#f8fafc"/>
+  <text x="170" y="140" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Tempo Traveller</text>
+  <text x="170" y="190" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="30">Group tours and family trips</text>
+</svg>

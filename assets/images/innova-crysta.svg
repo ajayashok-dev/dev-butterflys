@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f1f5f9"/>
+  <rect x="0" y="560" width="1200" height="240" fill="#cbd5e1"/>
+  <rect x="180" y="220" width="820" height="280" rx="90" fill="#1d4ed8"/>
+  <rect x="260" y="180" width="360" height="140" rx="50" fill="#f8fafc"/>
+  <rect x="660" y="180" width="220" height="140" rx="50" fill="#f8fafc"/>
+  <circle cx="380" cy="560" r="100" fill="#111827"/>
+  <circle cx="820" cy="560" r="100" fill="#111827"/>
+  <circle cx="380" cy="560" r="50" fill="#f8fafc"/>
+  <circle cx="820" cy="560" r="50" fill="#f8fafc"/>
+  <rect x="120" y="320" width="120" height="80" rx="24" fill="#f59e0b"/>
+  <text x="170" y="140" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Innova Crysta</text>
+  <text x="170" y="190" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="30">Premium SUV for family travel</text>
+</svg>

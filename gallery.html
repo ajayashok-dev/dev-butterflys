@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Butterflys Tours &amp; Travels – Kozhikode</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Browse our photo gallery of Kerala tour trips, fleet vehicles, and customer journeys. Butterflys Tours & Travels - Kakkodi, Kozhikode.">
+    <meta name="keywords"
+        content="Butterflys Tours Gallery, Kerala trip photos, Wayanad tour pictures, cab fleet photos, Kozhikode travel gallery">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gallery | Butterflys Tours &amp; Travels">
+    <meta property="og:description"
+        content="Explore our Kerala travel gallery — stunning destinations, comfortable vehicles, and happy customers.">
+    <meta property="og:url" content="https://www.butterflystourstravels.com/gallery.html">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page Hero */
+        .page-hero {
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, hsl(222,47%,9%) 0%, hsl(164,60%,12%) 50%, hsl(222,47%,9%) 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--header-height);
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 60% at 20% 50%, hsla(164,85%,35%,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 80% 30%, hsla(38,100%,55%,0.12) 0%, transparent 70%);
+        }
+        .page-hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            padding: 0 20px;
+        }
+        .page-hero-content .section-tag { display: inline-block; margin-bottom: 16px; }
+        .page-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .page-hero-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 44px;
+        }
+
+        /* Masonry Grid */
+        .gallery-grid {
+            columns: 3;
+            column-gap: 16px;
+        }
+        @media (max-width: 900px) { .gallery-grid { columns: 2; } }
+        @media (max-width: 540px) { .gallery-grid { columns: 1; } }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-color-glow);
+            box-shadow: var(--shadow-accent);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .gallery-item:hover img { transform: scale(1.04); }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+        .gallery-item-label {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .gallery-item-label svg { width: 18px; height: 18px; fill: var(--accent); flex-shrink: 0; }
+
+        .gallery-tag-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        .gallery-item.hidden { display: none; }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            backdrop-filter: blur(6px);
+        }
+        .lightbox-overlay.active { opacity: 1; pointer-events: all; }
+        .lightbox-container {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .lightbox-img {
+            max-width: 88vw;
+            max-height: 78vh;
+            border-radius: var(--radius-md);
+            box-shadow: 0 32px 80px rgba(0,0,0,0.8);
+            object-fit: contain;
+        }
+        .lightbox-caption { color: var(--text-secondary); font-size: 0.95rem; text-align: center; }
+        .lightbox-close {
+            position: absolute;
+            top: -48px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+        }
+        .lightbox-close:hover { background: var(--danger); border-color: var(--danger); color: #fff; }
+        .lightbox-close svg { width: 20px; height: 20px; fill: currentColor; }
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+            z-index: 10000;
+        }
+        .lightbox-nav:hover { background: var(--primary); border-color: var(--primary); }
+        .lightbox-nav svg { width: 24px; height: 24px; fill: currentColor; }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* Gallery CTA Banner */
+        .gallery-cta {
+            margin-top: 64px;
+            background: linear-gradient(135deg, var(--primary) 0%, hsl(164,85%,22%) 100%);
+            border-radius: var(--radius-lg);
+            padding: 48px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .gallery-cta h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem,3vw,2.2rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        .gallery-cta p { color: rgba(255,255,255,0.85); margin-bottom: 28px; position: relative; }
+        .gallery-cta .btn { position: relative; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo" id="logo-link">
+                <svg class="logo-butterfly" viewBox="0 0 24 24">
+                    <path d="M12 21c-.5 0-1-.3-1.3-.8L8.4 16c-1.3-.2-2.5-.9-3.3-1.9-.9-1.1-1.3-2.6-1-4.1.3-1.6 1.4-3 3-3.6 1.1-.5 2.3-.4 3.4.1.7.3 1.2.7 1.5 1.2.3-.5.8-.9 1.5-1.2 1.1-.5 2.3-.5 3.4-.1 1.6.6 2.7 2 3 3.6.3 1.5-.1 3-.9 4.1-.8 1-2 1.7-3.3 1.9l-2.3 4.2c-.3.5-.8.8-1.3.8zm-2.4-7l2.4 4.3 2.4-4.3c1.1-.2 2.1-.8 2.7-1.6.7-.9 1-2.1.8-3.2-.2-1.1-1-2.1-2.1-2.5-.8-.3-1.7-.3-2.4.1-.6.3-1.1.9-1.4 1.6l-.3.6-.3-.6c-.3-.7-.8-1.3-1.4-1.6-.7-.4-1.6-.4-2.4-.1-1.1.4-1.9 1.4-2.1 2.5-.2 1.1.1 2.3.8 3.2.7.8 1.7 1.4 2.7 1.6z"/>
+                </svg>
+                Butterflys <span>Tours</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#fleet" class="nav-link">Our Fleet</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="tel:+917736587699" class="btn btn-outline" id="call-now-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px;">
+                        <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
+                    </svg>
+                    +91 77365 87699
+                </a>
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="section-tag">Visual Journey</span>
+            <h1 class="page-hero-title">Our <span class="text-gradient">Gallery</span></h1>
+            <p class="page-hero-desc">
+                Moments captured across Kerala's most breathtaking landscapes — from misty Wayanad hills to serene Calicut coastlines.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-padding" id="gallery">
+        <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="gallery-filters">
+                <button class="tab-btn active" data-filter="all" id="filter-all">All Photos</button>
+                <button class="tab-btn" data-filter="destinations" id="filter-destinations">Destinations</button>
+                <button class="tab-btn" data-filter="fleet" id="filter-fleet">Our Fleet</button>
+                <button class="tab-btn" data-filter="trips" id="filter-trips">Customer Trips</button>
+                <button class="tab-btn" data-filter="wedding" id="filter-wedding">Weddings</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+
+                <div class="gallery-item" data-category="fleet" data-caption="Toyota Innova Crysta – Our Premium SUV">
+                    <span class="gallery-tag-badge">Fleet</span>
+                    <img src="assets/images/innova-crysta.svg" alt="Toyota Innova Crysta cab Butterflys Tours" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+                            Toyota Innova Crysta
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fleet" data-caption="Sedan Cab – Suzuki Dzire / Toyota Etios">
+                    <span class="gallery-tag-badge">Fleet</span>
+                    <img src="assets/images/sedan-cab.svg" alt="Sedan cab Butterflys Tours" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+                            Suzuki Dzire / Toyota Etios
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="destinations" data-caption="Wayanad – Banasura Sagar Dam">
+                    <span class="gallery-tag-badge">Destination</span>
+                    <img src="assets/images/wayanad.svg" alt="Wayanad Banasura Sagar Dam Kerala tour" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Wayanad, Kerala
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fleet" data-caption="Maruti Suzuki Ertiga – 6-Seater Family SUV">
+                    <span class="gallery-tag-badge">Fleet</span>
+                    <img src="assets/images/ertiga-suv.svg" alt="Maruti Ertiga cab Butterflys" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+                            Maruti Suzuki Ertiga
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="destinations" data-caption="Munnar – Lush Tea Gardens of Kerala">
+                    <span class="gallery-tag-badge">Destination</span>
+                    <img src="assets/images/munnar.svg" alt="Munnar tea gardens Kerala tour" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Munnar, Kerala
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fleet" data-caption="Force Tempo Traveller – Group Tour Van">
+                    <span class="gallery-tag-badge">Fleet</span>
+                    <img src="assets/images/tempo-traveller.svg" alt="Tempo Traveller van Butterflys" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+                            Force Tempo Traveller
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="destinations" data-caption="Athirapally Falls – Kerala's Niagara">
+                    <span class="gallery-tag-badge">Destination</span>
+                    <img src="assets/images/athirappilly.svg" alt="Athirapally Falls Kerala" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Athirapally, Kerala
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="trips" data-caption="Family Tour to Wayanad – Happy Travellers">
+                    <span class="gallery-tag-badge">Customer Trip</span>
+                    <img src="assets/images/vythiri-resort.svg" alt="Wayanad resort trip Butterflys customers" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            Family Trip – Wayanad
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="destinations" data-caption="Ooty – Queen of Hill Stations">
+                    <span class="gallery-tag-badge">Destination</span>
+                    <img src="assets/images/ooty.svg" alt="Ooty lake Tamil Nadu tour from Kozhikode" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Ooty, Tamil Nadu
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wedding" data-caption="Wedding Car Rental – Premium Floral Decor">
+                    <span class="gallery-tag-badge">Wedding</span>
+                    <img src="assets/images/wedding-car.svg" alt="Wedding decorated car rental Kerala" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            Wedding Car Rental
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="trips" data-caption="Group Corporate Tour in Tempo Traveller">
+                    <span class="gallery-tag-badge">Customer Trip</span>
+                    <img src="assets/images/thekkady.svg" alt="Group corporate tour Thekkady Kerala" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            Group Tour – Thekkady
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="destinations" data-caption="Kozhikode Beach – Calicut Sunset Views">
+                    <span class="gallery-tag-badge">Destination</span>
+                    <img src="assets/images/kozhikode-beach.svg" alt="Kozhikode Calicut beach sunset" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-label">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Kozhikode Beach
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="gallery-cta">
+                <h2>Ready to Create Your Own Story?</h2>
+                <p>Book a tour today and make memories across God's Own Country.</p>
+                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                    <a href="packages.html" class="btn btn-outline" id="view-packages-btn">View Packages</a>
+                    <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours%20and%20Travels,%20I%20saw%20your%20gallery%20and%20want%20to%20book%20a%20tour!" class="btn btn-accent" target="_blank" rel="noopener" id="gallery-whatsapp-btn">Book on WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="index.html" class="logo mb-2" style="font-size:22px;">
+                        <svg class="logo-butterfly" viewBox="0 0 24 24" style="width:28px;height:28px;">
+                            <path d="M12 21c-.5 0-1-.3-1.3-.8L8.4 16c-1.3-.2-2.5-.9-3.3-1.9-.9-1.1-1.3-2.6-1-4.1.3-1.6 1.4-3 3-3.6 1.1-.5 2.3-.4 3.4.1.7.3 1.2.7 1.5 1.2.3-.5.8-.9 1.5-1.2 1.1-.5 2.3-.5 3.4-.1 1.6.6 2.7 2 3 3.6.3 1.5-.1 3-.9 4.1-.8 1-2 1.7-3.3 1.9l-2.3 4.2c-.3.5-.8.8-1.3.8zm-2.4-7l2.4 4.3 2.4-4.3c1.1-.2 2.1-.8 2.7-1.6.7-.9 1-2.1.8-3.2-.2-1.1-1-2.1-2.1-2.5-.8-.3-1.7-.3-2.4.1-.6.3-1.1.9-1.4 1.6l-.3.6-.3-.6c-.3-.7-.8-1.3-1.4-1.6-.7-.4-1.6-.4-2.4-.1-1.1.4-1.9 1.4-2.1 2.5-.2 1.1.1 2.3.8 3.2.7.8 1.7 1.4 2.7 1.6z"/>
+                        </svg>
+                        Butterflys <span>T&amp;T</span>
+                    </a>
+                    <p>Premium cab service &amp; Kerala tour operator based in Kakkodi, Kozhikode.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#fleet">Our Fleet</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+917736587699">+91 77365 87699</a></li>
+                        <li>Open 24 / 7</li>
+                        <li>Parambil Bazar, Kakkodi, Kozhikode</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Butterflys Tours &amp; Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <div class="whatsapp-float">
+        <span class="whatsapp-tooltip">Need a cab? Chat on WhatsApp!</span>
+        <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours%20and%20Travels,%20I'd%20like%20to%20inquire%20about%20a%20taxi%20or%20tour%20package." class="whatsapp-btn" target="_blank" rel="noopener" id="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.76.459 3.414 1.258 4.86L2 22l5.334-1.4c1.394.76 2.983 1.192 4.678 1.192 5.506 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm0 1.637c4.606 0 8.35 3.744 8.35 8.35 0 4.606-3.744 8.35-8.35 8.35-1.503 0-2.912-.4-4.127-1.104l-.296-.172-3.084.81.824-2.996-.19-.304C4.437 15.352 4.05 13.9 4.05 12.35c0-4.606 3.744-8.35 8.362-8.35zm-2.025 3.324c-.15 0-.317.02-.455.08-.22.1-.81.792-.81 1.932s.828 2.24.945 2.4c.117.16 1.606 2.45 3.89 3.44.544.236.969.377 1.302.483.547.174 1.045.15 1.44.09.438-.066 1.345-.55 1.533-1.082.188-.53.188-.988.13-1.082-.057-.1-.219-.15-.46-.27l-2.182-1.08c-.24-.12-.416-.084-.593.12l-.934 1.14c-.183.22-.366.245-.606.126-.24-.12-1.014-.374-1.932-1.194-.714-.637-1.196-1.425-1.336-1.666-.14-.24-.015-.37.105-.49.11-.11.24-.28.362-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.533-1.284-.73-1.76-.192-.464-.383-.4-.533-.408z"/></svg>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.gallery-filters .tab-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Lightbox
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        let currentIdx = 0;
+        let visibleItems = [];
+
+        const getVisible = () => [...document.querySelectorAll('.gallery-item:not(.hidden)')];
+
+        const openLightbox = (idx) => {
+            visibleItems = getVisible();
+            currentIdx = idx;
+            const item = visibleItems[currentIdx];
+            lightboxImg.src = item.querySelector('img').src;
+            lightboxImg.alt = item.querySelector('img').alt;
+            lightboxCaption.textContent = item.getAttribute('data-caption') || '';
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeLightbox = () => {
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        const navigate = (dir) => {
+            visibleItems = getVisible();
+            currentIdx = (currentIdx + dir + visibleItems.length) % visibleItems.length;
+            const item = visibleItems[currentIdx];
+            lightboxImg.src = item.querySelector('img').src;
+            lightboxImg.alt = item.querySelector('img').alt;
+            lightboxCaption.textContent = item.getAttribute('data-caption') || '';
+        };
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                visibleItems = getVisible();
+                const idx = visibleItems.indexOf(item);
+                openLightbox(idx >= 0 ? idx : 0);
+            });
+        });
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxOverlay.addEventListener('click', e => { if (e.target === lightboxOverlay) closeLightbox(); });
+        lightboxNext.addEventListener('click', () => navigate(1));
+        lightboxPrev.addEventListener('click', () => navigate(-1));
+        document.addEventListener('keydown', e => {
+            if (!lightboxOverlay.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') navigate(1);
+            if (e.key === 'ArrowLeft') navigate(-1);
+        });
+    </script>
+</body>
+
+</html>

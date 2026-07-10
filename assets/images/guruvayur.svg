@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#7c2d12"/>
+  <path d="M0 700C200 620 420 600 620 650C840 710 1120 760 1600 660V900H0Z" fill="#b45309"/>
+  <path d="M130 690C310 560 520 540 700 600C900 664 1130 726 1360 690C1450 676 1520 652 1600 620" fill="none" stroke="#fde68a" stroke-width="16" stroke-linecap="round"/>
+  <text x="140" y="180" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Guruvayur</text>
+  <text x="140" y="250" fill="#ffedd5" font-family="Segoe UI, Arial, sans-serif" font-size="34">Temple visit and cultural day trip</text>
+</svg>

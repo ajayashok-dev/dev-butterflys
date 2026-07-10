@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fdf2f8"/>
+  <rect x="180" y="280" width="1120" height="260" rx="90" fill="#be185d"/>
+  <rect x="280" y="220" width="420" height="140" rx="60" fill="#ffffff"/>
+  <rect x="760" y="220" width="220" height="140" rx="60" fill="#ffffff"/>
+  <circle cx="420" cy="590" r="110" fill="#111827"/>
+  <circle cx="1080" cy="590" r="110" fill="#111827"/>
+  <circle cx="420" cy="590" r="60" fill="#f8fafc"/>
+  <circle cx="1080" cy="590" r="60" fill="#f8fafc"/>
+  <text x="180" y="170" fill="#9d174d" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700">Wedding Car</text>
+  <text x="180" y="230" fill="#831843" font-family="Segoe UI, Arial, sans-serif" font-size="32">Decorated for special occasions</text>
+</svg>

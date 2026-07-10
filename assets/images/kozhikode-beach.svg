@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0f766e"/>
+  <path d="M0 690C180 620 340 640 520 690C700 740 940 760 1180 720C1320 692 1470 648 1600 600V900H0Z" fill="#0891b2"/>
+  <path d="M120 710C320 590 500 580 700 640C900 700 1100 760 1320 710C1420 688 1510 654 1600 620" fill="none" stroke="#fef3c7" stroke-width="16" stroke-linecap="round"/>
+  <text x="140" y="180" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Kozhikode Beach</text>
+  <text x="140" y="250" fill="#cffafe" font-family="Segoe UI, Arial, sans-serif" font-size="34">Sunset, sea breeze, and city charm</text>
+</svg>

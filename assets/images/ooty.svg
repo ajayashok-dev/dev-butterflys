@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#1d4ed8"/>
+  <path d="M0 660C220 580 460 540 680 610C900 680 1180 760 1600 660V900H0Z" fill="#3b82f6"/>
+  <path d="M140 700C320 570 520 560 680 610C840 660 1060 720 1280 690C1400 676 1500 642 1600 600" fill="none" stroke="#fef3c7" stroke-width="16" stroke-linecap="round"/>
+  <text x="140" y="180" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Ooty</text>
+  <text x="140" y="250" fill="#dbeafe" font-family="Segoe UI, Arial, sans-serif" font-size="34">Queen of the hill stations</text>
+</svg>
