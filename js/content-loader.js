@@ -68,9 +68,10 @@
     async function applySite(s) {
         // Header Logo
         const logoTextEl = document.querySelector('[data-site="logo-text"]');
-        if (logoTextEl) logoTextEl.innerHTML = `Butterflys <span data-site="logo-span">Tours</span>`;
         if (logoTextEl) {
-            logoTextEl.innerHTML = `${s.logoText} <span data-site="logo-span">${s.logoSpan}</span>`;
+            const svg = logoTextEl.querySelector('svg');
+            const svgStr = svg ? svg.outerHTML : '';
+            logoTextEl.innerHTML = `${svgStr} ${s.logoText} <span data-site="logo-span">${s.logoSpan}</span>`;
         }
 
         // Navigation Menu
@@ -106,7 +107,11 @@
 
         // Footer Logo
         const footerLogoEl = document.querySelector('[data-site="footer-logo-text"]');
-        if (footerLogoEl) footerLogoEl.innerHTML = `${s.logoText} <span>${s.footerLogoSpan}</span>`;
+        if (footerLogoEl) {
+            const svg = footerLogoEl.querySelector('svg');
+            const svgStr = svg ? svg.outerHTML : '';
+            footerLogoEl.innerHTML = `${svgStr} ${s.logoText} <span>${s.footerLogoSpan}</span>`;
+        }
 
         // Footer phone
         document.querySelectorAll('[data-site="footer-phone"]').forEach(el => {

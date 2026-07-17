@@ -1,8 +1,8 @@
 {
-  "businessName": "Butterflys Tours & Travels",
+  "businessName": "Butterflys Holidays Calicut",
   "logoText": "Butterflys",
-  "logoSpan": "Tours",
-  "footerLogoSpan": "T&T",
+  "logoSpan": "Holidays Calicut",
+  "footerLogoSpan": "Holidays Calicut",
   "tagline": "Premium Cab Service & Tour Packages in Kozhikode",
   "phone": "+91 77365 87699",
   "phoneRaw": "+917736587699",
@@ -24,17 +24,38 @@
   "footer": {
     "about": "Professional travels partner based in Kozhikode. Providing 24-hour safe journeys, reliable taxis, and complete holiday tours since 2017.",
     "copyright": "© 2026 Butterflys Tours & Travels. All rights reserved.",
-    "paymentMethods": ["UPI / GooglePay", "Cash"]
+    "paymentMethods": [
+      "UPI / GooglePay",
+      "Cash"
+    ]
   },
   "nav": {
     "callLabel": "+91 77365 87699",
     "items": [
-      { "label": "Home", "href": "index.html#home" },
-      { "label": "Services", "href": "index.html#services" },
-      { "label": "Our Fleet", "href": "index.html#fleet" },
-      { "label": "Packages", "href": "packages.html" },
-      { "label": "Gallery", "href": "gallery.html" },
-      { "label": "Contact", "href": "index.html#contact" }
+      {
+        "label": "Home",
+        "href": "index.html#home"
+      },
+      {
+        "label": "Services",
+        "href": "index.html#services"
+      },
+      {
+        "label": "Our Fleet",
+        "href": "index.html#fleet"
+      },
+      {
+        "label": "Packages",
+        "href": "packages.html"
+      },
+      {
+        "label": "Gallery",
+        "href": "gallery.html"
+      },
+      {
+        "label": "Contact",
+        "href": "index.html#contact"
+      }
     ]
   },
   "seo": {
