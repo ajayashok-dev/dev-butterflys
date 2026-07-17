@@ -1,0 +1,235 @@
+{
+  "hero": {
+    "sectionTag": "Curated Experiences",
+    "title": "Kerala",
+    "titleGradient": "Tour Packages",
+    "description": "Hand-crafted itineraries covering Kerala's finest — hill stations, waterfalls, backwaters, temples & more. All starting from Kozhikode.",
+    "buttons": {
+      "primary": { "label": "Explore Packages", "href": "#packages" },
+      "secondary": {
+        "label": "Custom Quote",
+        "whatsappMessage": "Hi Butterflys Tours and Travels, I want to enquire about a tour package."
+      }
+    }
+  },
+  "section": {
+    "sectionTag": "Browse By Type",
+    "title": "Choose Your Perfect Trip"
+  },
+  "packages": [
+    {
+      "id": "pkg-wayanad",
+      "category": "nature",
+      "featured": true,
+      "image": "assets/images/wayanad.svg",
+      "alt": "Wayanad tour package Kerala",
+      "categoryBadge": "Nature & Hills",
+      "duration": "2 Days / 1 Night",
+      "name": "Wayanad Nature Escape",
+      "description": "Experience Banasura Sagar Dam, Edakkal Caves, Soochipara Falls & the misty Chembra Peak. Kerala's green paradise awaits.",
+      "highlights": [
+        "Banasura Sagar & Pookode Lake",
+        "Edakkal Caves & Soochipara Falls",
+        "Bamboo & Spice Plantation Visit",
+        "Scenic Thamarassery Ghat Drive"
+      ],
+      "inclusions": ["AC Vehicle", "Expert Driver", "Fuel Included", "Flexible Timing"],
+      "price": "₹4,500",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Wayanad Nature Escape Package!"
+    },
+    {
+      "id": "pkg-munnar",
+      "category": "nature",
+      "featured": false,
+      "image": "assets/images/munnar.svg",
+      "alt": "Munnar tour package Kerala",
+      "categoryBadge": "Nature & Hills",
+      "duration": "3 Days / 2 Nights",
+      "name": "Munnar Tea Valley Tour",
+      "description": "Rolling tea estates, misty valleys, and the majestic Eravikulam National Park. Munnar offers a surreal experience every season.",
+      "highlights": [
+        "Tea Museum & Factory Tour",
+        "Mattupetty Dam & Echo Point",
+        "Eravikulam National Park",
+        "Top Station Panoramic Views"
+      ],
+      "inclusions": ["AC Vehicle", "Expert Driver", "Fuel Included", "Hotel Assist"],
+      "price": "₹5,800",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Munnar Tea Valley Tour Package!"
+    },
+    {
+      "id": "pkg-ooty",
+      "category": "outstation",
+      "featured": false,
+      "image": "assets/images/ooty.svg",
+      "alt": "Ooty tour package from Kozhikode",
+      "categoryBadge": "Outstation",
+      "duration": "3 Days / 2 Nights",
+      "name": "Ooty & Kodaikanal Getaway",
+      "description": "Escape to the Queen of Hill Stations and the Princess of Hill Stations. Scenic drives through Nilgiris, toy train, and botanical gardens.",
+      "highlights": [
+        "Ooty Lake & Botanical Garden",
+        "Doddabetta Peak & Mudumalai",
+        "Kodaikanal Lake & Bear Shola Falls",
+        "Scenic Nilgiri Ghat Roads"
+      ],
+      "inclusions": ["AC Vehicle", "Experienced Driver", "All Tolls Included"],
+      "price": "₹6,500",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Ooty & Kodaikanal Package!"
+    },
+    {
+      "id": "pkg-sabarimala",
+      "category": "pilgrimage",
+      "featured": false,
+      "image": "assets/images/sabarimala.svg",
+      "alt": "Sabarimala pilgrimage tour from Kozhikode",
+      "categoryBadge": "Pilgrimage",
+      "duration": "2 Days / 1 Night",
+      "name": "Sabarimala Pilgrimage Package",
+      "description": "Safe, comfortable & devotional journey to Lord Ayyappa's abode. We ensure a stress-free trip so you can focus on your prayer.",
+      "highlights": [
+        "Pickup from Kozhikode / Kakkodi",
+        "Pamba Base Camp Drop",
+        "Guruvayur Temple Visit Option",
+        "Trustworthy, Patient Driver"
+      ],
+      "inclusions": ["AC Vehicle", "Night Travel OK", "Flexible Return"],
+      "price": "₹3,800",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Sabarimala Pilgrimage Package!"
+    },
+    {
+      "id": "pkg-guruvayur",
+      "category": "pilgrimage",
+      "featured": false,
+      "image": "assets/images/guruvayur.svg",
+      "alt": "Guruvayur temple tour from Kozhikode",
+      "categoryBadge": "Pilgrimage",
+      "duration": "1 Day",
+      "name": "Guruvayur & Thrissur Day Trip",
+      "description": "Visit the sacred Sri Krishna Temple at Guruvayur and explore the cultural capital of Kerala — Thrissur — in a single blessed day.",
+      "highlights": [
+        "Guruvayur Sri Krishna Temple",
+        "Punnathur Kotta Elephant Sanctuary",
+        "Thrissur Round & Vadakkumnathan Temple",
+        "Comfortable Same-Day Return"
+      ],
+      "inclusions": ["AC Sedan / SUV", "Experienced Driver", "Fuel Included"],
+      "price": "₹2,800",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Guruvayur & Thrissur Day Trip!"
+    },
+    {
+      "id": "pkg-athirapally",
+      "category": "nature",
+      "featured": false,
+      "image": "assets/images/athirappilly.svg",
+      "alt": "Athirapally Falls Kerala tour",
+      "categoryBadge": "Nature",
+      "duration": "1 Day",
+      "name": "Athirapally Falls Day Trip",
+      "description": "Kerala's mightiest waterfall, often called India's Niagara, combined with the serene Vazhachal Falls and Sholayar forest drives.",
+      "highlights": [
+        "Athirapally & Vazhachal Falls",
+        "Sholayar Forest Scenic Drive",
+        "Chalakudy River View",
+        "Optional Parambikulam Lake"
+      ],
+      "inclusions": ["AC Vehicle", "Knowledgeable Driver", "Toll Included"],
+      "price": "₹3,200",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Athirapally Falls Day Trip!"
+    },
+    {
+      "id": "pkg-kozhikode",
+      "category": "beach",
+      "featured": false,
+      "image": "assets/images/kozhikode-beach.svg",
+      "alt": "Kozhikode beach city tour",
+      "categoryBadge": "Beach & Coast",
+      "duration": "Half Day / Full Day",
+      "name": "Kozhikode City & Beach Tour",
+      "description": "Discover the City of Spices — Calicut's heritage mosques, historic markets, iconic beach, lighthouse & the finest halal cuisine.",
+      "highlights": [
+        "Calicut Beach & Lighthouse",
+        "Tali Temple & Mishkal Mosque",
+        "Sweet Street & SM Street Food Walk",
+        "Payyoli & Kappad Beach Options"
+      ],
+      "inclusions": ["AC Vehicle", "Local Guide Driver", "Customizable Route"],
+      "price": "₹1,800",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Kozhikode City & Beach Tour!"
+    },
+    {
+      "id": "pkg-coorg",
+      "category": "outstation",
+      "featured": false,
+      "image": "assets/images/coorg.svg",
+      "alt": "Coorg tour from Kozhikode",
+      "categoryBadge": "Outstation",
+      "duration": "3 Days / 2 Nights",
+      "name": "Coorg Coffee Country Tour",
+      "description": "The Scotland of India — lush coffee estates, misty mountains, cascading Abbey Falls & Tibetan monasteries in beautiful Karnataka.",
+      "highlights": [
+        "Abbey Falls & Raja's Seat",
+        "Coffee & Spice Plantation Tour",
+        "Namdroling Tibetan Monastery",
+        "Dubare Elephant Camp"
+      ],
+      "inclusions": ["AC Vehicle", "Experienced Driver", "Hotel Recommendations"],
+      "price": "₹7,200",
+      "perText": "per person (group of 4)",
+      "bookLabel": "Book Now",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Coorg Coffee Country Tour!"
+    }
+  ],
+  "whyChoose": {
+    "sectionTag": "Why Butterflys",
+    "title": "Why Travel With Us",
+    "items": [
+      {
+        "icon": "shield",
+        "title": "Safe & Reliable",
+        "description": "Verified drivers, well-maintained vehicles & GPS-tracked trips for your peace of mind."
+      },
+      {
+        "icon": "clock",
+        "title": "24/7 Service",
+        "description": "Round-the-clock availability. Early mornings, late nights, festivals — we are always ready."
+      },
+      {
+        "icon": "rupee",
+        "title": "Best Price",
+        "description": "Transparent & competitive pricing with no hidden charges. Pay only what's agreed."
+      },
+      {
+        "icon": "location",
+        "title": "Local Expertise",
+        "description": "Our drivers know every corner of Kerala & South India, ensuring you don't miss a thing."
+      },
+      {
+        "icon": "calendar",
+        "title": "Flexible Itinerary",
+        "description": "Every trip is tailored to your schedule. Change plans on the go — we adapt for you."
+      }
+    ]
+  },
+  "customCta": {
+    "title": "Can't Find Your Perfect Package?",
+    "description": "Tell us your destination, group size, and budget — we'll craft a custom Kerala experience just for you!",
+    "whatsappLabel": "Chat on WhatsApp",
+    "whatsappMessage": "Hi Butterflys Tours, I want a custom tour package! Please help me plan my trip.",
+    "callLabel": "Call Us Now"
+  }
+}

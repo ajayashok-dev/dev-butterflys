@@ -243,33 +243,27 @@
     </style>
 </head>
 
-<body>
+<body data-page="gallery">
 
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
-            <a href="index.html" class="logo" id="logo-link">
+            <a href="index.html#home" class="logo" id="logo-link" data-site="logo-text">
                 <svg class="logo-butterfly" viewBox="0 0 24 24">
                     <path d="M12 21c-.5 0-1-.3-1.3-.8L8.4 16c-1.3-.2-2.5-.9-3.3-1.9-.9-1.1-1.3-2.6-1-4.1.3-1.6 1.4-3 3-3.6 1.1-.5 2.3-.4 3.4.1.7.3 1.2.7 1.5 1.2.3-.5.8-.9 1.5-1.2 1.1-.5 2.3-.5 3.4-.1 1.6.6 2.7 2 3 3.6.3 1.5-.1 3-.9 4.1-.8 1-2 1.7-3.3 1.9l-2.3 4.2c-.3.5-.8.8-1.3.8zm-2.4-7l2.4 4.3 2.4-4.3c1.1-.2 2.1-.8 2.7-1.6.7-.9 1-2.1.8-3.2-.2-1.1-1-2.1-2.1-2.5-.8-.3-1.7-.3-2.4.1-.6.3-1.1.9-1.4 1.6l-.3.6-.3-.6c-.3-.7-.8-1.3-1.4-1.6-.7-.4-1.6-.4-2.4-.1-1.1.4-1.9 1.4-2.1 2.5-.2 1.1.1 2.3.8 3.2.7.8 1.7 1.4 2.7 1.6z"/>
                 </svg>
-                Butterflys <span>Tours</span>
             </a>
 
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#fleet" class="nav-link">Our Fleet</a>
-                <a href="packages.html" class="nav-link">Packages</a>
-                <a href="gallery.html" class="nav-link active">Gallery</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+                <!-- Navigation links populated by content-loader.js -->
             </nav>
 
             <div class="nav-actions">
-                <a href="tel:+917736587699" class="btn btn-outline" id="call-now-btn">
+                <a href="tel:+917736587699" class="btn btn-outline" id="call-now-btn" data-site="phone-link">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px;">
                         <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
                     </svg>
-                    +91 77365 87699
+                    <span data-site="phone-label"></span>
                 </a>
             </div>
 
@@ -284,11 +278,9 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-content">
-            <span class="section-tag">Visual Journey</span>
-            <h1 class="page-hero-title">Our <span class="text-gradient">Gallery</span></h1>
-            <p class="page-hero-desc">
-                Moments captured across Kerala's most breathtaking landscapes — from misty Wayanad hills to serene Calicut coastlines.
-            </p>
+            <span class="section-tag" data-gallery="hero-tag"></span>
+            <h1 class="page-hero-title"><span data-gallery="hero-title"></span> <span class="text-gradient" data-gallery="hero-gradient"></span></h1>
+            <p class="page-hero-desc" data-gallery="hero-desc"></p>
         </div>
     </section>
 
@@ -305,147 +297,15 @@
                 <button class="tab-btn" data-filter="wedding" id="filter-wedding">Weddings</button>
             </div>
 
-            <!-- Masonry Grid -->
+            <!-- Gallery items rendered by content-loader.js from data/gallery.json -->
             <div class="gallery-grid" id="gallery-grid">
-
-                <div class="gallery-item" data-category="fleet" data-caption="Toyota Innova Crysta – Our Premium SUV">
-                    <span class="gallery-tag-badge">Fleet</span>
-                    <img src="assets/images/innova-crysta.svg" alt="Toyota Innova Crysta cab Butterflys Tours" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
-                            Toyota Innova Crysta
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="fleet" data-caption="Sedan Cab – Suzuki Dzire / Toyota Etios">
-                    <span class="gallery-tag-badge">Fleet</span>
-                    <img src="assets/images/sedan-cab.svg" alt="Sedan cab Butterflys Tours" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
-                            Suzuki Dzire / Toyota Etios
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="destinations" data-caption="Wayanad – Banasura Sagar Dam">
-                    <span class="gallery-tag-badge">Destination</span>
-                    <img src="assets/images/wayanad.svg" alt="Wayanad Banasura Sagar Dam Kerala tour" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                            Wayanad, Kerala
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="fleet" data-caption="Maruti Suzuki Ertiga – 6-Seater Family SUV">
-                    <span class="gallery-tag-badge">Fleet</span>
-                    <img src="assets/images/ertiga-suv.svg" alt="Maruti Ertiga cab Butterflys" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
-                            Maruti Suzuki Ertiga
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="destinations" data-caption="Munnar – Lush Tea Gardens of Kerala">
-                    <span class="gallery-tag-badge">Destination</span>
-                    <img src="assets/images/munnar.svg" alt="Munnar tea gardens Kerala tour" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                            Munnar, Kerala
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="fleet" data-caption="Force Tempo Traveller – Group Tour Van">
-                    <span class="gallery-tag-badge">Fleet</span>
-                    <img src="assets/images/tempo-traveller.svg" alt="Tempo Traveller van Butterflys" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
-                            Force Tempo Traveller
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="destinations" data-caption="Athirapally Falls – Kerala's Niagara">
-                    <span class="gallery-tag-badge">Destination</span>
-                    <img src="assets/images/athirappilly.svg" alt="Athirapally Falls Kerala" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                            Athirapally, Kerala
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="trips" data-caption="Family Tour to Wayanad – Happy Travellers">
-                    <span class="gallery-tag-badge">Customer Trip</span>
-                    <img src="assets/images/vythiri-resort.svg" alt="Wayanad resort trip Butterflys customers" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                            Family Trip – Wayanad
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="destinations" data-caption="Ooty – Queen of Hill Stations">
-                    <span class="gallery-tag-badge">Destination</span>
-                    <img src="assets/images/ooty.svg" alt="Ooty lake Tamil Nadu tour from Kozhikode" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                            Ooty, Tamil Nadu
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="wedding" data-caption="Wedding Car Rental – Premium Floral Decor">
-                    <span class="gallery-tag-badge">Wedding</span>
-                    <img src="assets/images/wedding-car.svg" alt="Wedding decorated car rental Kerala" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            Wedding Car Rental
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="trips" data-caption="Group Corporate Tour in Tempo Traveller">
-                    <span class="gallery-tag-badge">Customer Trip</span>
-                    <img src="assets/images/thekkady.svg" alt="Group corporate tour Thekkady Kerala" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                            Group Tour – Thekkady
-                        </span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="destinations" data-caption="Kozhikode Beach – Calicut Sunset Views">
-                    <span class="gallery-tag-badge">Destination</span>
-                    <img src="assets/images/kozhikode-beach.svg" alt="Kozhikode Calicut beach sunset" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-                            Kozhikode Beach
-                        </span>
-                    </div>
-                </div>
-
+                <!-- Loading... -->
             </div>
 
             <!-- CTA -->
             <div class="gallery-cta">
-                <h2>Ready to Create Your Own Story?</h2>
-                <p>Book a tour today and make memories across God's Own Country.</p>
+                <h2 data-gallery="cta-title"></h2>
+                <p data-gallery="cta-desc"></p>
                 <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
                     <a href="packages.html" class="btn btn-outline" id="view-packages-btn">View Packages</a>
                     <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours%20and%20Travels,%20I%20saw%20your%20gallery%20and%20want%20to%20book%20a%20tour!" class="btn btn-accent" target="_blank" rel="noopener" id="gallery-whatsapp-btn">Book on WhatsApp</a>
@@ -459,14 +319,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col footer-about">
-                    <a href="index.html" class="logo mb-2" style="font-size:22px;">
-                        <svg class="logo-butterfly" viewBox="0 0 24 24" style="width:28px;height:28px;">
-                            <path d="M12 21c-.5 0-1-.3-1.3-.8L8.4 16c-1.3-.2-2.5-.9-3.3-1.9-.9-1.1-1.3-2.6-1-4.1.3-1.6 1.4-3 3-3.6 1.1-.5 2.3-.4 3.4.1.7.3 1.2.7 1.5 1.2.3-.5.8-.9 1.5-1.2 1.1-.5 2.3-.5 3.4-.1 1.6.6 2.7 2 3 3.6.3 1.5-.1 3-.9 4.1-.8 1-2 1.7-3.3 1.9l-2.3 4.2c-.3.5-.8.8-1.3.8zm-2.4-7l2.4 4.3 2.4-4.3c1.1-.2 2.1-.8 2.7-1.6.7-.9 1-2.1.8-3.2-.2-1.1-1-2.1-2.1-2.5-.8-.3-1.7-.3-2.4.1-.6.3-1.1.9-1.4 1.6l-.3.6-.3-.6c-.3-.7-.8-1.3-1.4-1.6-.7-.4-1.6-.4-2.4-.1-1.1.4-1.9 1.4-2.1 2.5-.2 1.1.1 2.3.8 3.2.7.8 1.7 1.4 2.7 1.6z"/>
-                        </svg>
-                        Butterflys <span>T&amp;T</span>
+                <div class="footer-col footer-brand">
+                    <a href="index.html#home" class="logo" data-site="footer-logo-text">
                     </a>
-                    <p>Premium cab service &amp; Kerala tour operator based in Kakkodi, Kozhikode.</p>
+                    <p data-site="footer-about"></p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -481,14 +337,14 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+917736587699">+91 77365 87699</a></li>
-                        <li>Open 24 / 7</li>
-                        <li>Parambil Bazar, Kakkodi, Kozhikode</li>
+                        <li><a href="tel:+917736587699" data-site="footer-phone"></a></li>
+                        <li data-site="footer-hours"></li>
+                        <li data-site="footer-address"></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Butterflys Tours &amp; Travels. All rights reserved.</p>
+                <p data-site="footer-copyright"></p>
             </div>
         </div>
     </footer>
@@ -519,78 +375,7 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        // Gallery Filter
-        const filterBtns = document.querySelectorAll('.gallery-filters .tab-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.getAttribute('data-filter');
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            });
-        });
-
-        // Lightbox
-        const lightboxOverlay = document.getElementById('lightbox-overlay');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const lightboxPrev = document.getElementById('lightbox-prev');
-        const lightboxNext = document.getElementById('lightbox-next');
-        let currentIdx = 0;
-        let visibleItems = [];
-
-        const getVisible = () => [...document.querySelectorAll('.gallery-item:not(.hidden)')];
-
-        const openLightbox = (idx) => {
-            visibleItems = getVisible();
-            currentIdx = idx;
-            const item = visibleItems[currentIdx];
-            lightboxImg.src = item.querySelector('img').src;
-            lightboxImg.alt = item.querySelector('img').alt;
-            lightboxCaption.textContent = item.getAttribute('data-caption') || '';
-            lightboxOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-        const closeLightbox = () => {
-            lightboxOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-        const navigate = (dir) => {
-            visibleItems = getVisible();
-            currentIdx = (currentIdx + dir + visibleItems.length) % visibleItems.length;
-            const item = visibleItems[currentIdx];
-            lightboxImg.src = item.querySelector('img').src;
-            lightboxImg.alt = item.querySelector('img').alt;
-            lightboxCaption.textContent = item.getAttribute('data-caption') || '';
-        };
-
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                visibleItems = getVisible();
-                const idx = visibleItems.indexOf(item);
-                openLightbox(idx >= 0 ? idx : 0);
-            });
-        });
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxOverlay.addEventListener('click', e => { if (e.target === lightboxOverlay) closeLightbox(); });
-        lightboxNext.addEventListener('click', () => navigate(1));
-        lightboxPrev.addEventListener('click', () => navigate(-1));
-        document.addEventListener('keydown', e => {
-            if (!lightboxOverlay.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowRight') navigate(1);
-            if (e.key === 'ArrowLeft') navigate(-1);
-        });
-    </script>
+    <script src="js/content-loader.js"></script>
 </body>
 
 </html>

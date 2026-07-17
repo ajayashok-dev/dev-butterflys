@@ -317,33 +317,27 @@
     </style>
 </head>
 
-<body>
+<body data-page="packages">
 
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
-            <a href="index.html" class="logo" id="logo-link">
+            <a href="index.html#home" class="logo" id="logo-link" data-site="logo-text">
                 <svg class="logo-butterfly" viewBox="0 0 24 24">
                     <path d="M12 21c-.5 0-1-.3-1.3-.8L8.4 16c-1.3-.2-2.5-.9-3.3-1.9-.9-1.1-1.3-2.6-1-4.1.3-1.6 1.4-3 3-3.6 1.1-.5 2.3-.4 3.4.1.7.3 1.2.7 1.5 1.2.3-.5.8-.9 1.5-1.2 1.1-.5 2.3-.5 3.4-.1 1.6.6 2.7 2 3 3.6.3 1.5-.1 3-.9 4.1-.8 1-2 1.7-3.3 1.9l-2.3 4.2c-.3.5-.8.8-1.3.8zm-2.4-7l2.4 4.3 2.4-4.3c1.1-.2 2.1-.8 2.7-1.6.7-.9 1-2.1.8-3.2-.2-1.1-1-2.1-2.1-2.5-.8-.3-1.7-.3-2.4.1-.6.3-1.1.9-1.4 1.6l-.3.6-.3-.6c-.3-.7-.8-1.3-1.4-1.6-.7-.4-1.6-.4-2.4-.1-1.1.4-1.9 1.4-2.1 2.5-.2 1.1.1 2.3.8 3.2.7.8 1.7 1.4 2.7 1.6z"/>
                 </svg>
-                Butterflys <span>Tours</span>
             </a>
 
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#fleet" class="nav-link">Our Fleet</a>
-                <a href="packages.html" class="nav-link active">Packages</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+                <!-- Navigation links populated by content-loader.js -->
             </nav>
 
             <div class="nav-actions">
-                <a href="tel:+917736587699" class="btn btn-outline" id="call-now-btn">
+                <a href="tel:+917736587699" class="btn btn-outline" id="call-now-btn" data-site="phone-link">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px;">
                         <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
                     </svg>
-                    +91 77365 87699
+                    <span data-site="phone-label"></span>
                 </a>
             </div>
 
@@ -358,14 +352,12 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-content">
-            <span class="section-tag">Curated Experiences</span>
-            <h1 class="page-hero-title">Kerala <span class="text-gradient">Tour Packages</span></h1>
-            <p class="page-hero-desc">
-                Hand-crafted itineraries covering Kerala's finest — hill stations, waterfalls, backwaters, temples &amp; more. All starting from Kozhikode.
-            </p>
+            <span class="section-tag" data-pkg="hero-tag"></span>
+            <h1 class="page-hero-title"><span data-pkg="hero-title"></span> <span class="text-gradient" data-pkg="hero-gradient"></span></h1>
+            <p class="page-hero-desc" data-pkg="hero-desc"></p>
             <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
                 <a href="#packages" class="btn btn-accent" id="hero-explore-btn">Explore Packages</a>
-                <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours%20and%20Travels,%20I%20want%20to%20enquire%20about%20a%20tour%20package." class="btn btn-outline" target="_blank" rel="noopener" id="hero-custom-btn">Custom Quote</a>
+                <a href="#" class="btn btn-outline" target="_blank" rel="noopener" id="hero-custom-btn">Custom Quote</a>
             </div>
         </div>
     </section>
@@ -376,8 +368,8 @@
 
             <!-- Filter Tabs -->
             <div class="section-header text-center" style="margin-bottom:36px;">
-                <span class="section-tag">Browse By Type</span>
-                <h2 class="section-title">Choose Your Perfect Trip</h2>
+                <span class="section-tag" data-pkg="section-tag">Browse By Type</span>
+                <h2 class="section-title" data-pkg="section-title">Choose Your Perfect Trip</h2>
             </div>
 
             <div class="pkg-filters">
@@ -388,350 +380,25 @@
                 <button class="tab-btn" data-filter="outstation" id="pkg-filter-outstation">Outstation</button>
             </div>
 
-            <!-- Package Cards -->
+            <!-- Package Cards rendered by content-loader.js from data/packages.json -->
             <div class="packages-grid" id="packages-grid">
-
-                <!-- Package 1: Wayanad -->
-                <div class="pkg-card featured" data-category="nature" id="pkg-wayanad">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Nature &amp; Hills</span>
-                        <img src="assets/images/wayanad.svg" alt="Wayanad tour package Kerala" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            2 Days / 1 Night
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Wayanad Nature Escape</h3>
-                        <p class="pkg-desc">Experience Banasura Sagar Dam, Edakkal Caves, Soochipara Falls &amp; the misty Chembra Peak. Kerala's green paradise awaits.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Banasura Sagar &amp; Pookode Lake</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Edakkal Caves &amp; Soochipara Falls</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Bamboo &amp; Spice Plantation Visit</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Scenic Thamarassery Ghat Drive</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Expert Driver</span>
-                            <span class="pkg-inclusion-tag">Fuel Included</span>
-                            <span class="pkg-inclusion-tag">Flexible Timing</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹4,500</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Wayanad%20Nature%20Escape%20Package!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-wayanad-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 2: Munnar -->
-                <div class="pkg-card" data-category="nature" id="pkg-munnar">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Nature &amp; Hills</span>
-                        <img src="assets/images/munnar.svg" alt="Munnar tour package Kerala" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            3 Days / 2 Nights
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Munnar Tea Valley Tour</h3>
-                        <p class="pkg-desc">Rolling tea estates, misty valleys, and the majestic Eravikulam National Park. Munnar offers a surreal experience every season.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Tea Museum &amp; Factory Tour</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Mattupetty Dam &amp; Echo Point</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Eravikulam National Park</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Top Station Panoramic Views</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Expert Driver</span>
-                            <span class="pkg-inclusion-tag">Fuel Included</span>
-                            <span class="pkg-inclusion-tag">Hotel Assist</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹5,800</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Munnar%20Tea%20Valley%20Tour%20Package!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-munnar-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 3: Ooty -->
-                <div class="pkg-card" data-category="outstation" id="pkg-ooty">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Outstation</span>
-                        <img src="assets/images/ooty.svg" alt="Ooty tour package from Kozhikode" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            3 Days / 2 Nights
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Ooty &amp; Kodaikanal Getaway</h3>
-                        <p class="pkg-desc">Escape to the Queen of Hill Stations and the Princess of Hill Stations. Scenic drives through Nilgiris, toy train, and botanical gardens.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Ooty Lake &amp; Botanical Garden</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Doddabetta Peak &amp; Mudumalai</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Kodaikanal Lake &amp; Bear Shola Falls</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Scenic Nilgiri Ghat Roads</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Experienced Driver</span>
-                            <span class="pkg-inclusion-tag">All Tolls Included</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹6,500</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Ooty%20%26%20Kodaikanal%20Package!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-ooty-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 4: Sabarimala Pilgrimage -->
-                <div class="pkg-card" data-category="pilgrimage" id="pkg-sabarimala">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Pilgrimage</span>
-                        <img src="assets/images/sabarimala.svg" alt="Sabarimala pilgrimage tour from Kozhikode" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            2 Days / 1 Night
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Sabarimala Pilgrimage Package</h3>
-                        <p class="pkg-desc">Safe, comfortable &amp; devotional journey to Lord Ayyappa's abode. We ensure a stress-free trip so you can focus on your prayer.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Pickup from Kozhikode / Kakkodi</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Pamba Base Camp Drop</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Guruvayur Temple Visit Option</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Trustworthy, Patient Driver</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Night Travel OK</span>
-                            <span class="pkg-inclusion-tag">Flexible Return</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹3,800</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Sabarimala%20Pilgrimage%20Package!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-sabarimala-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 5: Guruvayur + Thrissur -->
-                <div class="pkg-card" data-category="pilgrimage" id="pkg-guruvayur">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Pilgrimage</span>
-                        <img src="assets/images/guruvayur.svg" alt="Guruvayur temple tour from Kozhikode" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            1 Day
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Guruvayur &amp; Thrissur Day Trip</h3>
-                        <p class="pkg-desc">Visit the sacred Sri Krishna Temple at Guruvayur and explore the cultural capital of Kerala — Thrissur — in a single blessed day.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Guruvayur Sri Krishna Temple</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Punnathur Kotta Elephant Sanctuary</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Thrissur Round &amp; Vadakkumnathan Temple</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Comfortable Same-Day Return</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Sedan / SUV</span>
-                            <span class="pkg-inclusion-tag">Experienced Driver</span>
-                            <span class="pkg-inclusion-tag">Fuel Included</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹2,800</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Guruvayur%20%26%20Thrissur%20Day%20Trip!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-guruvayur-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 6: Athirapally + Vazhachal -->
-                <div class="pkg-card" data-category="nature" id="pkg-athirapally">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Nature</span>
-                        <img src="assets/images/athirappilly.svg" alt="Athirapally Falls Kerala tour" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            1 Day
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Athirapally Falls Day Trip</h3>
-                        <p class="pkg-desc">Kerala's mightiest waterfall, often called India's Niagara, combined with the serene Vazhachal Falls and Sholayar forest drives.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Athirapally &amp; Vazhachal Falls</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Sholayar Forest Scenic Drive</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Chalakudy River View</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Optional Parambikulam Lake</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Knowledgeable Driver</span>
-                            <span class="pkg-inclusion-tag">Toll Included</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹3,200</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Athirapally%20Falls%20Day%20Trip!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-athirapally-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 7: Kozhikode Beach -->
-                <div class="pkg-card" data-category="beach" id="pkg-kozhikode">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Beach &amp; Coast</span>
-                        <img src="assets/images/kozhikode-beach.svg" alt="Kozhikode beach city tour" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            Half Day / Full Day
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Kozhikode City &amp; Beach Tour</h3>
-                        <p class="pkg-desc">Discover the City of Spices — Calicut's heritage mosques, historic markets, iconic beach, lighthouse &amp; the finest halal cuisine.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Calicut Beach &amp; Lighthouse</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Tali Temple &amp; Mishkal Mosque</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Sweet Street &amp; SM Street Food Walk</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Payyoli &amp; Kappad Beach Options</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Local Guide Driver</span>
-                            <span class="pkg-inclusion-tag">Customizable Route</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹1,800</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Kozhikode%20City%20%26%20Beach%20Tour!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-kozhikode-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 8: Coorg -->
-                <div class="pkg-card" data-category="outstation" id="pkg-coorg">
-                    <div class="pkg-img-wrap">
-                        <span class="pkg-category-badge">Outstation</span>
-                        <img src="assets/images/coorg.svg" alt="Coorg tour from Kozhikode" loading="lazy">
-                        <div class="pkg-img-overlay"></div>
-                        <span class="pkg-duration-badge">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                            3 Days / 2 Nights
-                        </span>
-                    </div>
-                    <div class="pkg-body">
-                        <h3 class="pkg-name">Coorg Coffee Country Tour</h3>
-                        <p class="pkg-desc">The Scotland of India — lush coffee estates, misty mountains, cascading Abbey Falls &amp; Tibetan monasteries in beautiful Karnataka.</p>
-                        <ul class="pkg-highlights">
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Abbey Falls &amp; Raja's Seat</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Coffee &amp; Spice Plantation Tour</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Namdroling Tibetan Monastery</li>
-                            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Dubare Elephant Camp</li>
-                        </ul>
-                        <div class="pkg-inclusions">
-                            <span class="pkg-inclusion-tag">AC Vehicle</span>
-                            <span class="pkg-inclusion-tag">Experienced Driver</span>
-                            <span class="pkg-inclusion-tag">Hotel Recommendations</span>
-                        </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">₹7,200</span>
-                                <span class="per">per person (group of 4)</span>
-                            </div>
-                            <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20to%20book%20the%20Coorg%20Coffee%20Country%20Tour!" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-coorg-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Loading... -->
             </div>
 
             <!-- Why Choose Us -->
             <div class="why-choose">
                 <div class="section-header text-center">
-                    <span class="section-tag">Why Butterflys</span>
-                    <h2 class="section-title">Why Travel With Us</h2>
+                    <span class="section-tag" data-pkg="why-tag">Why Butterflys</span>
+                    <h2 class="section-title" data-pkg="why-title">Why Travel With Us</h2>
                 </div>
-                <div class="why-grid">
-                    <div class="why-item">
-                        <div class="why-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-                        </div>
-                        <h4>Safe &amp; Reliable</h4>
-                        <p>Verified drivers, well-maintained vehicles &amp; GPS-tracked trips for your peace of mind.</p>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                        </div>
-                        <h4>24/7 Service</h4>
-                        <p>Round-the-clock availability. Early mornings, late nights, festivals — we are always ready.</p>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">
-                            <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-                        </div>
-                        <h4>Best Price</h4>
-                        <p>Transparent &amp; competitive pricing with no hidden charges. Pay only what's agreed.</p>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        </div>
-                        <h4>Local Expertise</h4>
-                        <p>Our drivers know every corner of Kerala &amp; South India, ensuring you don't miss a thing.</p>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">
-                            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
-                        </div>
-                        <h4>Flexible Itinerary</h4>
-                        <p>Every trip is tailored to your schedule. Change plans on the go — we adapt for you.</p>
-                    </div>
-                </div>
+                <!-- Items rendered by content-loader.js -->
+                <div class="why-grid"></div>
             </div>
 
             <!-- Custom Package CTA -->
             <div class="custom-pkg-cta" id="custom-package">
-                <h2>Can't Find Your Perfect Package?</h2>
-                <p>Tell us your destination, group size, and budget — we'll craft a custom Kerala experience just for you!</p>
+                <h2 data-pkg="cta-title"></h2>
+                <p data-pkg="cta-desc"></p>
                 <div class="btn-group">
                     <a href="https://wa.me/917736587699?text=Hi%20Butterflys%20Tours,%20I%20want%20a%20custom%20tour%20package!%20Please%20help%20me%20plan%20my%20trip." class="btn btn-accent" target="_blank" rel="noopener" id="custom-whatsapp-btn">
                         Chat on WhatsApp
@@ -747,14 +414,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col footer-about">
-                    <a href="index.html" class="logo mb-2" style="font-size:22px;">
-                        <svg class="logo-butterfly" viewBox="0 0 24 24" style="width:28px;height:28px;">
-                            <path d="M12 21c-.5 0-1-.3-1.3-.8L8.4 16c-1.3-.2-2.5-.9-3.3-1.9-.9-1.1-1.3-2.6-1-4.1.3-1.6 1.4-3 3-3.6 1.1-.5 2.3-.4 3.4.1.7.3 1.2.7 1.5 1.2.3-.5.8-.9 1.5-1.2 1.1-.5 2.3-.5 3.4-.1 1.6.6 2.7 2 3 3.6.3 1.5-.1 3-.9 4.1-.8 1-2 1.7-3.3 1.9l-2.3 4.2c-.3.5-.8.8-1.3.8zm-2.4-7l2.4 4.3 2.4-4.3c1.1-.2 2.1-.8 2.7-1.6.7-.9 1-2.1.8-3.2-.2-1.1-1-2.1-2.1-2.5-.8-.3-1.7-.3-2.4.1-.6.3-1.1.9-1.4 1.6l-.3.6-.3-.6c-.3-.7-.8-1.3-1.4-1.6-.7-.4-1.6-.4-2.4-.1-1.1.4-1.9 1.4-2.1 2.5-.2 1.1.1 2.3.8 3.2.7.8 1.7 1.4 2.7 1.6z"/>
-                        </svg>
-                        Butterflys <span>T&amp;T</span>
+                <div class="footer-col footer-brand">
+                    <a href="index.html#home" class="logo" data-site="footer-logo-text">
                     </a>
-                    <p>Premium cab service &amp; Kerala tour operator based in Kakkodi, Kozhikode.</p>
+                    <p data-site="footer-about"></p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -769,14 +432,14 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+917736587699">+91 77365 87699</a></li>
-                        <li>Open 24 / 7</li>
-                        <li>Parambil Bazar, Kakkodi, Kozhikode</li>
+                        <li><a href="tel:+917736587699" data-site="footer-phone"></a></li>
+                        <li data-site="footer-hours"></li>
+                        <li data-site="footer-address"></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Butterflys Tours &amp; Travels. All rights reserved.</p>
+                <p data-site="footer-copyright"></p>
             </div>
         </div>
     </footer>
@@ -790,25 +453,7 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        // Package Filter
-        const pkgFilterBtns = document.querySelectorAll('.pkg-filters .tab-btn');
-        const pkgCards = document.querySelectorAll('.pkg-card');
-        pkgFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                pkgFilterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.getAttribute('data-filter');
-                pkgCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/content-loader.js"></script>
 </body>
 
 </html>

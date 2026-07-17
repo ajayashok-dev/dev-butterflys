@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "sectionTag": "Visual Journey",
+    "title": "Our",
+    "titleGradient": "Gallery",
+    "description": "Moments captured across Kerala's most breathtaking landscapes — from misty Wayanad hills to serene Calicut coastlines."
+  },
+  "items": [
+    {
+      "category": "fleet",
+      "src": "assets/images/innova-crysta.svg",
+      "alt": "Toyota Innova Crysta cab Butterflys Tours",
+      "caption": "Toyota Innova Crysta – Our Premium SUV",
+      "badge": "Fleet",
+      "label": "Toyota Innova Crysta",
+      "iconType": "car"
+    },
+    {
+      "category": "fleet",
+      "src": "assets/images/sedan-cab.svg",
+      "alt": "Sedan cab Butterflys Tours",
+      "caption": "Sedan Cab – Suzuki Dzire / Toyota Etios",
+      "badge": "Fleet",
+      "label": "Suzuki Dzire / Toyota Etios",
+      "iconType": "car"
+    },
+    {
+      "category": "destinations",
+      "src": "assets/images/wayanad.svg",
+      "alt": "Wayanad Banasura Sagar Dam Kerala tour",
+      "caption": "Wayanad – Banasura Sagar Dam",
+      "badge": "Destination",
+      "label": "Wayanad, Kerala",
+      "iconType": "location"
+    },
+    {
+      "category": "fleet",
+      "src": "assets/images/ertiga-suv.svg",
+      "alt": "Maruti Ertiga cab Butterflys",
+      "caption": "Maruti Suzuki Ertiga – 6-Seater Family SUV",
+      "badge": "Fleet",
+      "label": "Maruti Suzuki Ertiga",
+      "iconType": "car"
+    },
+    {
+      "category": "destinations",
+      "src": "assets/images/munnar.svg",
+      "alt": "Munnar tea gardens Kerala tour",
+      "caption": "Munnar – Lush Tea Gardens of Kerala",
+      "badge": "Destination",
+      "label": "Munnar, Kerala",
+      "iconType": "location"
+    },
+    {
+      "category": "fleet",
+      "src": "assets/images/tempo-traveller.svg",
+      "alt": "Tempo Traveller van Butterflys",
+      "caption": "Force Tempo Traveller – Group Tour Van",
+      "badge": "Fleet",
+      "label": "Force Tempo Traveller",
+      "iconType": "car"
+    },
+    {
+      "category": "destinations",
+      "src": "assets/images/athirappilly.svg",
+      "alt": "Athirapally Falls Kerala",
+      "caption": "Athirapally Falls – Kerala's Niagara",
+      "badge": "Destination",
+      "label": "Athirapally, Kerala",
+      "iconType": "location"
+    },
+    {
+      "category": "trips",
+      "src": "assets/images/vythiri-resort.svg",
+      "alt": "Wayanad resort trip Butterflys customers",
+      "caption": "Family Tour to Wayanad – Happy Travellers",
+      "badge": "Customer Trip",
+      "label": "Family Trip – Wayanad",
+      "iconType": "person"
+    },
+    {
+      "category": "destinations",
+      "src": "assets/images/ooty.svg",
+      "alt": "Ooty lake Tamil Nadu tour from Kozhikode",
+      "caption": "Ooty – Queen of Hill Stations",
+      "badge": "Destination",
+      "label": "Ooty, Tamil Nadu",
+      "iconType": "location"
+    },
+    {
+      "category": "wedding",
+      "src": "assets/images/wedding-car.svg",
+      "alt": "Wedding decorated car rental Kerala",
+      "caption": "Wedding Car Rental – Premium Floral Decor",
+      "badge": "Wedding",
+      "label": "Wedding Car Rental",
+      "iconType": "heart"
+    },
+    {
+      "category": "trips",
+      "src": "assets/images/thekkady.svg",
+      "alt": "Group corporate tour Thekkady Kerala",
+      "caption": "Group Corporate Tour in Tempo Traveller",
+      "badge": "Customer Trip",
+      "label": "Group Tour – Thekkady",
+      "iconType": "person"
+    },
+    {
+      "category": "destinations",
+      "src": "assets/images/kozhikode-beach.svg",
+      "alt": "Kozhikode Calicut beach sunset",
+      "caption": "Kozhikode Beach – Calicut Sunset Views",
+      "badge": "Destination",
+      "label": "Kozhikode Beach",
+      "iconType": "location"
+    }
+  ],
+  "cta": {
+    "title": "Ready to Create Your Own Story?",
+    "description": "Book a tour today and make memories across God's Own Country.",
+    "packagesLabel": "View Packages",
+    "whatsappLabel": "Book on WhatsApp",
+    "whatsappMessage": "Hi Butterflys Tours and Travels, I saw your gallery and want to book a tour!"
+  }
+}

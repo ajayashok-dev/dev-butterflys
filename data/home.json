@@ -1,0 +1,227 @@
+{
+  "hero": {
+    "badge": "Open 24 Hours • Kozhikode Travel Partner",
+    "titleLine1": "Explore Kerala with",
+    "titleGradient": "Butterfly’s",
+    "titleGold": "Holidays Calicut",
+    "description": "Professional, reliable, and premium cab services based in Kakkodi, Kozhikode. Experience custom tours, prompt airport transfers, and gorgeous wedding rentals across God's Own Country.",
+    "buttons": {
+      "primary": {
+        "label": "Book Your Ride",
+        "href": "#contact"
+      },
+      "secondary": {
+        "label": "Our Services",
+        "href": "#services"
+      }
+    },
+    "stats": [
+      {
+        "value": "4.7★",
+        "label": "Customer Rating"
+      },
+      {
+        "value": "100%",
+        "label": "Safe Journeys"
+      },
+      {
+        "value": "24/7",
+        "label": "Active Support"
+      }
+    ],
+    "bookingCard": {
+      "title": "Quick Booking / Quote",
+      "submitLabel": "Book on WhatsApp",
+      "serviceOptions": [
+        {
+          "value": "Local Taxi / Outstation Cab",
+          "label": "Local / Outstation Cab"
+        },
+        {
+          "value": "Airport Pickup / Drop",
+          "label": "Airport Pickup & Drop"
+        },
+        {
+          "value": "Tour Package (Wayanad/Munnar/etc)",
+          "label": "Kerala Tour Package"
+        },
+        {
+          "value": "Wedding / Luxury Car Rental",
+          "label": "Wedding & Luxury Rentals"
+        }
+      ]
+    }
+  },
+  "services": {
+    "sectionTag": "What We Offer",
+    "title": "Our Premium Services",
+    "description": "Reliable, prompt, and high-quality travels designed around your exact needs.",
+    "items": [
+      {
+        "icon": "taxi",
+        "title": "24/7 Taxi & Cab Service",
+        "description": "Anytime local rides, hospital runs, and outstation trips in Kozhikode and neighboring cities. Professional drivers ensure your trip is smooth and safe."
+      },
+      {
+        "icon": "airport",
+        "title": "Airport Transfers",
+        "description": "Timely pickup and drop services for Calicut International Airport (CCJ) and Cochin Airport. Never miss a flight or wait around for a taxi again."
+      },
+      {
+        "icon": "globe",
+        "title": "Custom Kerala Tours",
+        "description": "Explore pristine locations like Wayanad hills, Munnar valleys, Ooty, Coorg, or Calicut beaches. Get complete itineraries, stays, and travel solutions mapped out."
+      },
+      {
+        "icon": "heart",
+        "title": "Pilgrimage & Wedding Rentals",
+        "description": "Premium luxury vehicles for grooms/brides, wedding parties, and group pilgrim packages (e.g. Sabarimala, Guruvayur, local temples and mosques)."
+      }
+    ]
+  },
+  "fleet": {
+    "sectionTag": "Choose Your Vehicle",
+    "title": "Our Modern Fleet",
+    "description": "Clean, well-maintained, and air-conditioned vehicles for absolute comfort.",
+    "vehicles": [
+      {
+        "id": "sedan",
+        "category": "sedan",
+        "image": "assets/images/sedan-cab.svg",
+        "alt": "Sedan Dzire/Etios cab",
+        "tag": "Popular",
+        "name": "Suzuki Dzire / Toyota Etios",
+        "passengers": "4 Passengers",
+        "luggage": "Large Luggage",
+        "features": [
+          "AC / Climate Control",
+          "Bluetooth Audio & Charging",
+          "Experienced Driver"
+        ],
+        "price": "₹12 / km",
+        "priceLabel": "Starting From",
+        "inquireLabel": "Inquire",
+        "datacar": "Sedan (Dzire/Etios)"
+      },
+      {
+        "id": "innova",
+        "category": "suv",
+        "image": "assets/images/innova-crysta.svg",
+        "alt": "Innova Crysta SUV cab",
+        "tag": "Premium Comfort",
+        "name": "Toyota Innova Crysta",
+        "passengers": "7 Passengers",
+        "luggage": "Extra Luggage Space",
+        "features": [
+          "Luxurious Seating",
+          "Rear AC Vents",
+          "Top Choice for Families"
+        ],
+        "price": "₹18 / km",
+        "priceLabel": "Starting From",
+        "inquireLabel": "Inquire",
+        "datacar": "Toyota Innova Crysta"
+      },
+      {
+        "id": "ertiga",
+        "category": "suv",
+        "image": "assets/images/ertiga-suv.svg",
+        "alt": "Maruti Ertiga SUV cab",
+        "tag": "Best Value",
+        "name": "Maruti Suzuki Ertiga",
+        "passengers": "6 Passengers",
+        "luggage": "Standard Luggage",
+        "features": [
+          "Fuel Efficient / Low Rate",
+          "Air Conditioned",
+          "Ideal for Small Groups"
+        ],
+        "price": "₹15 / km",
+        "priceLabel": "Starting From",
+        "inquireLabel": "Inquire",
+        "datacar": "Maruti Ertiga"
+      },
+      {
+        "id": "traveller",
+        "category": "traveller",
+        "image": "assets/images/tempo-traveller.svg",
+        "alt": "Tempo Traveller tour van",
+        "tag": "Group Tours",
+        "name": "Force Tempo Traveller",
+        "passengers": "12-17 Passengers",
+        "luggage": "Huge Luggage Carrier",
+        "features": [
+          "Dual AC System",
+          "Pushback Recliner Seats",
+          "LED TV & Sound System"
+        ],
+        "price": "₹24 / km",
+        "priceLabel": "Starting From",
+        "inquireLabel": "Inquire",
+        "datacar": "Tempo Traveller"
+      }
+    ]
+  },
+  "testimonials": {
+    "sectionTag": "Reviews from Justdial",
+    "title": "What Our Customers Say",
+    "ratingText": "4.7 out of 5 Rating (15 Reviews)",
+    "description": "Authentic experiences shared by our valued passengers.",
+    "items": [
+      {
+        "quote": "According to our wishes, A driver capable of becoming one of us who works with our conscience.",
+        "author": "JIJIN",
+        "date": "October 2022",
+        "stars": 5
+      },
+      {
+        "quote": "Very good service and extremely polite behavior. Highly recommended for long tours.",
+        "author": "arjun",
+        "date": "July 2022",
+        "stars": 5
+      },
+      {
+        "quote": "Good driver and good service. We had a great airport pickup experience at midnight.",
+        "author": "Rinju",
+        "date": "October 2022",
+        "stars": 5
+      }
+    ]
+  },
+  "contact": {
+    "sectionTag": "Get In Touch",
+    "title": "Contact & Bookings",
+    "description": "Have questions or want to customize a tour? Reach out directly.",
+    "officeLabel": "Our Office Address",
+    "phoneLabel": "Call or WhatsApp Us",
+    "supportHours": "Support: 24 Hours / 7 Days a week",
+    "formTitle": "Send Inquiry",
+    "formSubmitLabel": "Send Message On WhatsApp",
+    "vehicleOptions": [
+      {
+        "value": "Suzuki Dzire / Toyota Etios (Sedan)",
+        "label": "Suzuki Dzire / Toyota Etios"
+      },
+      {
+        "value": "Toyota Innova Crysta (SUV)",
+        "label": "Toyota Innova Crysta"
+      },
+      {
+        "value": "Maruti Suzuki Ertiga (SUV)",
+        "label": "Maruti Suzuki Ertiga"
+      },
+      {
+        "value": "Force Tempo Traveller (Van)",
+        "label": "Force Tempo Traveller"
+      },
+      {
+        "value": "Custom Tour Packages",
+        "label": "Custom Tour Packages"
+      },
+      {
+        "value": "Airport Pickup / Drop",
+        "label": "Airport Pickup / Drop"
+      }
+    ]
+  }
+}
