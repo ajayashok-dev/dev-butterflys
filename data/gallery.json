@@ -1,125 +1,116 @@
 {
   "hero": {
-    "sectionTag": "Visual Journey",
-    "title": "Our",
+    "sectionTag": "Our Official Fleet",
+    "title": "Vehicle & Tour",
     "titleGradient": "Gallery",
-    "description": "Moments captured across Kerala's most breathtaking landscapes — from misty Wayanad hills to serene Calicut coastlines."
+    "description": "Real photos of our well-maintained cabs, premium Chevrolet Tavera SUVs, and luxury Force Tempo Travellers ready for your Kerala tours and airport transfers."
   },
   "items": [
     {
-      "category": "fleet",
-      "src": "assets/images/innova-crysta.svg",
-      "alt": "Toyota Innova Crysta cab Butterflys Tours",
-      "caption": "Toyota Innova Crysta – Our Premium SUV",
-      "badge": "Fleet",
-      "label": "Toyota Innova Crysta",
+      "category": "traveller",
+      "src": "assets/images/gallery/img1.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller KL 40 E 6604",
+      "caption": "Force Tempo Traveller (KL 40 E 6604) – 14 to 26 Seater AC Group Tour Van",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller – KL 40 E 6604",
       "iconType": "car"
     },
     {
-      "category": "fleet",
-      "src": "assets/images/sedan-cab.svg",
-      "alt": "Sedan cab Butterflys Tours",
-      "caption": "Sedan Cab – Suzuki Dzire / Toyota Etios",
-      "badge": "Fleet",
-      "label": "Suzuki Dzire / Toyota Etios",
+      "category": "suv",
+      "src": "assets/images/gallery/img2.jpeg",
+      "alt": "Butterflys Holidays Chevrolet Tavera Tour SUV KL 31 D 2000",
+      "caption": "Chevrolet Tavera (KL 31 D 2000) – Outstation Tour with Carrier",
+      "badge": "Tavera SUV",
+      "label": "Chevrolet Tavera – KL 31 D 2000",
       "iconType": "car"
     },
     {
-      "category": "destinations",
-      "src": "assets/images/wayanad.svg",
-      "alt": "Wayanad Banasura Sagar Dam Kerala tour",
-      "caption": "Wayanad – Banasura Sagar Dam",
-      "badge": "Destination",
-      "label": "Wayanad, Kerala",
-      "iconType": "location"
-    },
-    {
-      "category": "fleet",
-      "src": "assets/images/ertiga-suv.svg",
-      "alt": "Maruti Ertiga cab Butterflys",
-      "caption": "Maruti Suzuki Ertiga – 6-Seater Family SUV",
-      "badge": "Fleet",
-      "label": "Maruti Suzuki Ertiga",
+      "category": "traveller",
+      "src": "assets/images/gallery/img3.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller on scenic bridge KL 11 AG 6492",
+      "caption": "Force Tempo Traveller (KL 11 AG 6492) – Scenic Highway Tour",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller – KL 11 AG 6492",
       "iconType": "car"
     },
     {
-      "category": "destinations",
-      "src": "assets/images/munnar.svg",
-      "alt": "Munnar tea gardens Kerala tour",
-      "caption": "Munnar – Lush Tea Gardens of Kerala",
-      "badge": "Destination",
-      "label": "Munnar, Kerala",
-      "iconType": "location"
-    },
-    {
-      "category": "fleet",
-      "src": "assets/images/tempo-traveller.svg",
-      "alt": "Tempo Traveller van Butterflys",
-      "caption": "Force Tempo Traveller – Group Tour Van",
-      "badge": "Fleet",
-      "label": "Force Tempo Traveller",
+      "category": "suv",
+      "src": "assets/images/gallery/img4.jpeg",
+      "alt": "Butterflys Holidays Chevrolet Tavera KL 31 D 2000 Front View",
+      "caption": "Chevrolet Tavera (KL 31 D 2000) – 7-Seater Family Tour SUV",
+      "badge": "Tavera SUV",
+      "label": "Chevrolet Tavera Front Profile",
       "iconType": "car"
     },
     {
-      "category": "destinations",
-      "src": "assets/images/athirappilly.svg",
-      "alt": "Athirapally Falls Kerala",
-      "caption": "Athirapally Falls – Kerala's Niagara",
-      "badge": "Destination",
-      "label": "Athirapally, Kerala",
-      "iconType": "location"
+      "category": "traveller",
+      "src": "assets/images/gallery/img5.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller KL 40 E 6604",
+      "caption": "Force Tempo Traveller (KL 40 E 6604) – Luxury Grille & AC Comfort",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller – KL 40 E 6604",
+      "iconType": "car"
     },
     {
-      "category": "trips",
-      "src": "assets/images/vythiri-resort.svg",
-      "alt": "Wayanad resort trip Butterflys customers",
-      "caption": "Family Tour to Wayanad – Happy Travellers",
-      "badge": "Customer Trip",
-      "label": "Family Trip – Wayanad",
-      "iconType": "person"
+      "category": "traveller",
+      "src": "assets/images/gallery/img6.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller outdoor stop",
+      "caption": "Force Tempo Traveller – Ready for Outstation & Sightseeing Trips",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller – Clean Fleet",
+      "iconType": "car"
     },
     {
-      "category": "destinations",
-      "src": "assets/images/ooty.svg",
-      "alt": "Ooty lake Tamil Nadu tour from Kozhikode",
-      "caption": "Ooty – Queen of Hill Stations",
-      "badge": "Destination",
-      "label": "Ooty, Tamil Nadu",
-      "iconType": "location"
+      "category": "luxury",
+      "src": "assets/images/gallery/img7.jpeg",
+      "alt": "Butterflys Holidays Luxury Dark Grey Tempo Traveller KL 40 E 6604",
+      "caption": "Luxury Dark Grey Tempo Traveller (KL 40 E 6604) – Forest & Nature Route",
+      "badge": "Luxury Edition",
+      "label": "Luxury Dark Grey Traveller",
+      "iconType": "car"
     },
     {
-      "category": "wedding",
-      "src": "assets/images/wedding-car.svg",
-      "alt": "Wedding decorated car rental Kerala",
-      "caption": "Wedding Car Rental – Premium Floral Decor",
-      "badge": "Wedding",
-      "label": "Wedding Car Rental",
-      "iconType": "heart"
+      "category": "traveller",
+      "src": "assets/images/gallery/img8.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller Departure Ready",
+      "caption": "Force Tempo Traveller (KL 40 E 6604) – Prepared for Long Journeys",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller – KL 40 E 6604",
+      "iconType": "car"
     },
     {
-      "category": "trips",
-      "src": "assets/images/thekkady.svg",
-      "alt": "Group corporate tour Thekkady Kerala",
-      "caption": "Group Corporate Tour in Tempo Traveller",
-      "badge": "Customer Trip",
-      "label": "Group Tour – Thekkady",
-      "iconType": "person"
+      "category": "traveller",
+      "src": "assets/images/gallery/img9.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller KL 13 AN 4980",
+      "caption": "Force Tempo Traveller (KL 13 AN 4980) – Hill Station & Ghat Tour",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller – KL 13 AN 4980",
+      "iconType": "car"
     },
     {
-      "category": "destinations",
-      "src": "assets/images/kozhikode-beach.svg",
-      "alt": "Kozhikode Calicut beach sunset",
-      "caption": "Kozhikode Beach – Calicut Sunset Views",
-      "badge": "Destination",
-      "label": "Kozhikode Beach",
-      "iconType": "location"
+      "category": "suv",
+      "src": "assets/images/gallery/img10.jpeg",
+      "alt": "Butterflys Holidays Chevrolet Tavera SUV in lush greenery",
+      "caption": "Chevrolet Tavera (KL 31 D 2000) – Reliable Kerala Travel Companion",
+      "badge": "Tavera SUV",
+      "label": "Chevrolet Tavera – KL 31 D 2000",
+      "iconType": "car"
+    },
+    {
+      "category": "luxury",
+      "src": "assets/images/gallery/img11.jpeg",
+      "alt": "Butterflys Holidays Luxury Dark Grey Tempo Traveller City Station",
+      "caption": "Luxury Dark Grey Tempo Traveller – Premium City & Airport Pickup",
+      "badge": "Luxury Edition",
+      "label": "Luxury Dark Grey Traveller",
+      "iconType": "car"
     }
   ],
   "cta": {
-    "title": "Ready to Create Your Own Story?",
-    "description": "Book a tour today and make memories across God's Own Country.",
+    "title": "Book Your Vehicle Today",
+    "description": "Choose from our clean, GPS-tracked fleet for your family trips, corporate journeys, airport transfers or wedding functions.",
     "packagesLabel": "View Packages",
     "whatsappLabel": "Book on WhatsApp",
-    "whatsappMessage": "Hi Butterflys Tours and Travels, I saw your gallery and want to book a tour!"
+    "whatsappMessage": "Hi Butterflys Tours and Travels, I saw your vehicle gallery and want to book a vehicle!"
   }
 }

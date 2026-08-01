@@ -1,9 +1,9 @@
 {
   "hero": {
     "sectionTag": "Curated Experiences",
-    "title": "Kerala",
+    "title": "Kerala & South India",
     "titleGradient": "Tour Packages",
-    "description": "Hand-crafted itineraries covering Kerala's finest — hill stations, waterfalls, backwaters, temples & more. All starting from Kozhikode.",
+    "description": "Hand-crafted itineraries covering South India's finest — hill stations, royal palaces, airports, temples & backwaters. All starting from Kozhikode.",
     "buttons": {
       "primary": { "label": "Explore Packages", "href": "#packages" },
       "secondary": {
@@ -17,6 +17,46 @@
     "title": "Choose Your Perfect Trip"
   },
   "packages": [
+    {
+      "id": "pkg-airport",
+      "category": "airport",
+      "featured": true,
+      "image": "assets/images/airport-service.svg",
+      "alt": "Calicut & Cochin Airport Cab Service",
+      "categoryBadge": "Airport Service",
+      "duration": "24/7 Available",
+      "name": "Airport Cab & Transfer Service",
+      "description": "Reliable and punctual 24/7 pickup and drop for Calicut International Airport (CCJ) & Cochin Airport (COK). Clean AC cabs and professional chauffeurs.",
+      "highlights": [
+        "24/7 Dedicated Airport Pickup & Drop",
+        "Real-Time Flight Schedule Monitoring",
+        "Direct Calicut (CCJ) & Cochin (COK) Transfers",
+        "Sedans, SUVs & Tempo Travellers Available"
+      ],
+      "inclusions": ["AC Vehicle", "Professional Chauffeur", "Luggage Space", "Zero Waiting Hassle"],
+      "bookLabel": "Enquire on WhatsApp",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book an Airport Cab / Transfer Service!"
+    },
+    {
+      "id": "pkg-mysore",
+      "category": "outstation",
+      "featured": true,
+      "image": "assets/images/mysore.svg",
+      "alt": "Mysore heritage tour package from Kozhikode",
+      "categoryBadge": "Heritage & Palace",
+      "duration": "2 Days / 1 Night",
+      "name": "Mysore Heritage & Palace Tour",
+      "description": "Explore the royal City of Palaces — Mysore Palace illumination, Chamundi Hill temple, Brindavan Gardens musical fountain and historic Srirangapatna.",
+      "highlights": [
+        "Mysore Maharaja Palace & Light Show",
+        "Chamundi Hill & Sri Chamundeshwari Temple",
+        "Brindavan Gardens & Musical Fountain",
+        "Srirangapatna Fort & Mysore Zoo Visit"
+      ],
+      "inclusions": ["AC Sedan / SUV", "Expert Driver", "Custom Itinerary", "Flexible Timing"],
+      "bookLabel": "Enquire on WhatsApp",
+      "whatsappMessage": "Hi Butterflys Tours, I want to enquire about the Mysore Heritage & Palace Tour Package!"
+    },
     {
       "id": "pkg-wayanad",
       "category": "nature",
@@ -34,9 +74,7 @@
         "Scenic Thamarassery Ghat Drive"
       ],
       "inclusions": ["AC Vehicle", "Expert Driver", "Fuel Included", "Flexible Timing"],
-      "price": "₹4,500",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Wayanad Nature Escape Package!"
     },
     {
@@ -56,9 +94,7 @@
         "Top Station Panoramic Views"
       ],
       "inclusions": ["AC Vehicle", "Expert Driver", "Fuel Included", "Hotel Assist"],
-      "price": "₹5,800",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Munnar Tea Valley Tour Package!"
     },
     {
@@ -78,10 +114,28 @@
         "Scenic Nilgiri Ghat Roads"
       ],
       "inclusions": ["AC Vehicle", "Experienced Driver", "All Tolls Included"],
-      "price": "₹6,500",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Ooty & Kodaikanal Package!"
+    },
+    {
+      "id": "pkg-coorg",
+      "category": "outstation",
+      "featured": false,
+      "image": "assets/images/coorg.svg",
+      "alt": "Coorg tour from Kozhikode",
+      "categoryBadge": "Outstation",
+      "duration": "3 Days / 2 Nights",
+      "name": "Coorg Coffee Country Tour",
+      "description": "The Scotland of India — lush coffee estates, misty mountains, cascading Abbey Falls & Tibetan monasteries in beautiful Karnataka.",
+      "highlights": [
+        "Abbey Falls & Raja's Seat",
+        "Coffee & Spice Plantation Tour",
+        "Namdroling Tibetan Monastery",
+        "Dubare Elephant Camp"
+      ],
+      "inclusions": ["AC Vehicle", "Experienced Driver", "Hotel Recommendations"],
+      "bookLabel": "Enquire on WhatsApp",
+      "whatsappMessage": "Hi Butterflys Tours, I want to book the Coorg Coffee Country Tour!"
     },
     {
       "id": "pkg-sabarimala",
@@ -100,9 +154,7 @@
         "Trustworthy, Patient Driver"
       ],
       "inclusions": ["AC Vehicle", "Night Travel OK", "Flexible Return"],
-      "price": "₹3,800",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Sabarimala Pilgrimage Package!"
     },
     {
@@ -122,9 +174,7 @@
         "Comfortable Same-Day Return"
       ],
       "inclusions": ["AC Sedan / SUV", "Experienced Driver", "Fuel Included"],
-      "price": "₹2,800",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Guruvayur & Thrissur Day Trip!"
     },
     {
@@ -144,9 +194,7 @@
         "Optional Parambikulam Lake"
       ],
       "inclusions": ["AC Vehicle", "Knowledgeable Driver", "Toll Included"],
-      "price": "₹3,200",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Athirapally Falls Day Trip!"
     },
     {
@@ -158,7 +206,7 @@
       "categoryBadge": "Beach & Coast",
       "duration": "Half Day / Full Day",
       "name": "Kozhikode City & Beach Tour",
-      "description": "Discover the City of Spices — Calicut's heritage mosques, historic markets, iconic beach, lighthouse & the finest halal cuisine.",
+      "description": "Discover the City of Spices — Calicut's heritage mosques, historic markets, iconic beach, lighthouse & the finest local cuisine.",
       "highlights": [
         "Calicut Beach & Lighthouse",
         "Tali Temple & Mishkal Mosque",
@@ -166,32 +214,8 @@
         "Payyoli & Kappad Beach Options"
       ],
       "inclusions": ["AC Vehicle", "Local Guide Driver", "Customizable Route"],
-      "price": "₹1,800",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
+      "bookLabel": "Enquire on WhatsApp",
       "whatsappMessage": "Hi Butterflys Tours, I want to book the Kozhikode City & Beach Tour!"
-    },
-    {
-      "id": "pkg-coorg",
-      "category": "outstation",
-      "featured": false,
-      "image": "assets/images/coorg.svg",
-      "alt": "Coorg tour from Kozhikode",
-      "categoryBadge": "Outstation",
-      "duration": "3 Days / 2 Nights",
-      "name": "Coorg Coffee Country Tour",
-      "description": "The Scotland of India — lush coffee estates, misty mountains, cascading Abbey Falls & Tibetan monasteries in beautiful Karnataka.",
-      "highlights": [
-        "Abbey Falls & Raja's Seat",
-        "Coffee & Spice Plantation Tour",
-        "Namdroling Tibetan Monastery",
-        "Dubare Elephant Camp"
-      ],
-      "inclusions": ["AC Vehicle", "Experienced Driver", "Hotel Recommendations"],
-      "price": "₹7,200",
-      "perText": "per person (group of 4)",
-      "bookLabel": "Book Now",
-      "whatsappMessage": "Hi Butterflys Tours, I want to book the Coorg Coffee Country Tour!"
     }
   ],
   "whyChoose": {
@@ -210,8 +234,8 @@
       },
       {
         "icon": "rupee",
-        "title": "Best Price",
-        "description": "Transparent & competitive pricing with no hidden charges. Pay only what's agreed."
+        "title": "Best Rates",
+        "description": "Transparent & customized pricing tailored to your group size and itinerary."
       },
       {
         "icon": "location",
@@ -227,7 +251,7 @@
   },
   "customCta": {
     "title": "Can't Find Your Perfect Package?",
-    "description": "Tell us your destination, group size, and budget — we'll craft a custom Kerala experience just for you!",
+    "description": "Tell us your destination, group size, and vehicle preference — we'll craft a custom tour experience just for you!",
     "whatsappLabel": "Chat on WhatsApp",
     "whatsappMessage": "Hi Butterflys Tours, I want a custom tour package! Please help me plan my trip.",
     "callLabel": "Call Us Now"

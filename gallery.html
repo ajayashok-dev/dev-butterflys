@@ -25,227 +25,8 @@
     <meta name="theme-color" content="#0c4a52">
 
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Page Hero */
-        .page-hero {
-            min-height: 340px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, hsl(222,47%,9%) 0%, hsl(164,60%,12%) 50%, hsl(222,47%,9%) 100%);
-            position: relative;
-            overflow: hidden;
-            padding-top: var(--header-height);
-        }
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 60% 60% at 20% 50%, hsla(164,85%,35%,0.18) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 80% 30%, hsla(38,100%,55%,0.12) 0%, transparent 70%);
-        }
-        .page-hero-content {
-            position: relative;
-            text-align: center;
-            z-index: 1;
-            padding: 0 20px;
-        }
-        .page-hero-content .section-tag { display: inline-block; margin-bottom: 16px; }
-        .page-hero-title {
-            font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-        .page-hero-desc {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 520px;
-            margin: 0 auto;
-        }
-
-        /* Filter Tabs */
-        .gallery-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 44px;
-        }
-
-        /* Masonry Grid */
-        .gallery-grid {
-            columns: 3;
-            column-gap: 16px;
-        }
-        @media (max-width: 900px) { .gallery-grid { columns: 2; } }
-        @media (max-width: 540px) { .gallery-grid { columns: 1; } }
-
-        .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 16px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            transition: var(--transition-smooth);
-        }
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-color-glow);
-            box-shadow: var(--shadow-accent);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-        }
-        .gallery-item:hover img { transform: scale(1.04); }
-
-        .gallery-item-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
-            opacity: 0;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-        }
-        .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-
-        .gallery-item-label {
-            color: #fff;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .gallery-item-label svg { width: 18px; height: 18px; fill: var(--accent); flex-shrink: 0; }
-
-        .gallery-tag-badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: var(--radius-full);
-        }
-
-        .gallery-item.hidden { display: none; }
-
-        /* Lightbox */
-        .lightbox-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.92);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.35s ease;
-            backdrop-filter: blur(6px);
-        }
-        .lightbox-overlay.active { opacity: 1; pointer-events: all; }
-        .lightbox-container {
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
-        .lightbox-img {
-            max-width: 88vw;
-            max-height: 78vh;
-            border-radius: var(--radius-md);
-            box-shadow: 0 32px 80px rgba(0,0,0,0.8);
-            object-fit: contain;
-        }
-        .lightbox-caption { color: var(--text-secondary); font-size: 0.95rem; text-align: center; }
-        .lightbox-close {
-            position: absolute;
-            top: -48px;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--text-primary);
-            transition: var(--transition-fast);
-        }
-        .lightbox-close:hover { background: var(--danger); border-color: var(--danger); color: #fff; }
-        .lightbox-close svg { width: 20px; height: 20px; fill: currentColor; }
-        .lightbox-nav {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 48px;
-            height: 48px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--text-primary);
-            transition: var(--transition-fast);
-            z-index: 10000;
-        }
-        .lightbox-nav:hover { background: var(--primary); border-color: var(--primary); }
-        .lightbox-nav svg { width: 24px; height: 24px; fill: currentColor; }
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
-
-        /* Gallery CTA Banner */
-        .gallery-cta {
-            margin-top: 64px;
-            background: linear-gradient(135deg, var(--primary) 0%, hsl(164,85%,22%) 100%);
-            border-radius: var(--radius-lg);
-            padding: 48px 32px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .gallery-cta::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-        }
-        .gallery-cta h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem,3vw,2.2rem);
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 12px;
-            position: relative;
-        }
-        .gallery-cta p { color: rgba(255,255,255,0.85); margin-bottom: 28px; position: relative; }
-        .gallery-cta .btn { position: relative; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 
 <body data-page="gallery">
@@ -254,7 +35,7 @@
     <header class="header" id="header">
         <div class="container">
             <a href="index.html#home" class="logo" id="logo-link">
-                <img src="assets/images/butterflys_holidays_logos/main_logo.png" alt="Butterflys Holidays Calicut" class="brand-logo">
+                <img src="assets/images/butterflys_holidays_logos/image.png" alt="Butterflys Holidays Calicut" class="brand-logo">
             </a>
 
             <nav class="nav-menu" id="nav-menu">
@@ -280,6 +61,13 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
+        <div class="hero-video-bg">
+            <video autoplay loop muted playsinline poster="assets/images/hero-banner.svg">
+                <source src="assets/videos/hero-background.mp4" type="video/mp4">
+                <source src="assets/videos/need_to_background_only_shbo.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
         <div class="page-hero-content">
             <span class="section-tag" data-gallery="hero-tag"></span>
             <h1 class="page-hero-title"><span data-gallery="hero-title"></span> <span class="text-gradient" data-gallery="hero-gradient"></span></h1>
@@ -293,11 +81,10 @@
 
             <!-- Filter Tabs -->
             <div class="gallery-filters">
-                <button class="tab-btn active" data-filter="all" id="filter-all">All Photos</button>
-                <button class="tab-btn" data-filter="destinations" id="filter-destinations">Destinations</button>
-                <button class="tab-btn" data-filter="fleet" id="filter-fleet">Our Fleet</button>
-                <button class="tab-btn" data-filter="trips" id="filter-trips">Customer Trips</button>
-                <button class="tab-btn" data-filter="wedding" id="filter-wedding">Weddings</button>
+                <button class="tab-btn active" data-filter="all" id="filter-all">All Vehicles</button>
+                <button class="tab-btn" data-filter="traveller" id="filter-traveller">Tempo Travellers</button>
+                <button class="tab-btn" data-filter="suv" id="filter-suv">Tavera & SUVs</button>
+                <button class="tab-btn" data-filter="luxury" id="filter-luxury">Luxury Edition</button>
             </div>
 
             <!-- Gallery items rendered by content-loader.js from data/gallery.json -->
@@ -324,7 +111,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand">
                     <a href="index.html#home" class="logo mb-2">
-                        <img src="assets/images/butterflys_holidays_logos/main_logo.png" alt="Butterflys Holidays Calicut" class="brand-logo">
+                        <img src="assets/images/butterflys_holidays_logos/image.png" alt="Butterflys Holidays Calicut" class="brand-logo">
                     </a>
                     <p data-site="footer-about"></p>
                 </div>
@@ -378,7 +165,7 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/content-loader.js"></script>
 </body>
 

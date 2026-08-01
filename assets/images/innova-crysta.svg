@@ -1,14 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#f1f5f9"/>
-  <rect x="0" y="560" width="1200" height="240" fill="#cbd5e1"/>
-  <rect x="180" y="220" width="820" height="280" rx="90" fill="#1d4ed8"/>
-  <rect x="260" y="180" width="360" height="140" rx="50" fill="#f8fafc"/>
-  <rect x="660" y="180" width="220" height="140" rx="50" fill="#f8fafc"/>
-  <circle cx="380" cy="560" r="100" fill="#111827"/>
-  <circle cx="820" cy="560" r="100" fill="#111827"/>
-  <circle cx="380" cy="560" r="50" fill="#f8fafc"/>
-  <circle cx="820" cy="560" r="50" fill="#f8fafc"/>
-  <rect x="120" y="320" width="120" height="80" rx="24" fill="#f59e0b"/>
-  <text x="170" y="140" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Innova Crysta</text>
-  <text x="170" y="190" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="30">Premium SUV for family travel</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="crysta-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1726"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#07131f"/>
+    </linearGradient>
+    <linearGradient id="crysta-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="40%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="crysta-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="crysta-light" cx="0%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="16" fill="url(#crysta-bg)"/>
+  <line x1="40" y1="360" x2="760" y2="360" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/>
+  <ellipse cx="400" cy="365" rx="340" ry="25" fill="#030811" opacity="0.8"/>
+
+  <!-- Headlight beam -->
+  <polygon points="100,280 0,240 0,330 100,300" fill="url(#crysta-light)"/>
+
+  <!-- Innova Crysta Bold Silhouette -->
+  <path d="M100 280 Q120 220 230 210 L310 140 Q350 125 500 125 L630 130 Q680 135 700 225 L720 245 Q750 255 750 295 L740 325 Q725 335 690 335 L630 335 Q610 280 550 280 Q490 280 470 335 L300 335 Q280 280 220 280 Q160 280 140 335 L80 335 Q60 335 60 305 L70 285 Q80 280 100 280 Z" fill="url(#crysta-body)" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Chrome Grille Detail -->
+  <path d="M90 260 L120 245 L120 285 Z" fill="#f4961b" opacity="0.9"/>
+
+  <!-- Tinted Windows -->
+  <path d="M320 145 L435 145 L435 205 L260 205 Q295 155 320 145 Z" fill="url(#crysta-glass)" stroke="#818cf8" stroke-width="1.5"/>
+  <path d="M450 145 L560 145 L560 205 L450 205 Z" fill="url(#crysta-glass)" stroke="#818cf8" stroke-width="1.5"/>
+  <path d="M575 145 L625 148 Q665 155 680 205 L575 205 Z" fill="url(#crysta-glass)" stroke="#818cf8" stroke-width="1.5"/>
+
+  <!-- Roof spoiler & rails -->
+  <path d="M620 122 L650 120" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M340 120 L620 120" stroke="#f4961b" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Headlights & Taillights -->
+  <ellipse cx="90" cy="275" rx="14" ry="8" fill="#818cf8"/>
+  <path d="M740 260 Q750 265 745 290 L735 290 Z" fill="#ef4444"/>
+
+  <!-- Wheels Outer -->
+  <!-- Front Wheel (Alloy) -->
+  <circle cx="220" cy="335" r="55" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="220" cy="335" r="35" fill="#1e293b"/>
+  <circle cx="220" cy="335" r="14" fill="#f4961b"/>
+  <line x1="220" y1="300" x2="220" y2="370" stroke="#cbd5e1" stroke-width="3"/>
+  <line x1="185" y1="335" x2="255" y2="335" stroke="#cbd5e1" stroke-width="3"/>
+  <line x1="195" y1="310" x2="245" y2="360" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="195" y1="360" x2="245" y2="310" stroke="#cbd5e1" stroke-width="2.5"/>
+  
+  <!-- Rear Wheel (Alloy) -->
+  <circle cx="550" cy="335" r="55" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="550" cy="335" r="35" fill="#1e293b"/>
+  <circle cx="550" cy="335" r="14" fill="#f4961b"/>
+  <line x1="550" y1="300" x2="550" y2="370" stroke="#cbd5e1" stroke-width="3"/>
+  <line x1="515" y1="335" x2="585" y2="335" stroke="#cbd5e1" stroke-width="3"/>
+  <line x1="525" y1="310" x2="575" y2="360" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="525" y1="360" x2="575" y2="310" stroke="#cbd5e1" stroke-width="2.5"/>
+
+  <text x="50" y="60" fill="#f8fafc" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" opacity="0.9">PREMIUM LUXURY SUV</text>
+  <text x="50" y="88" fill="#a78bfa" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="1">TOYOTA INNOVA &amp; INNOVA CRYSTA</text>
 </svg>

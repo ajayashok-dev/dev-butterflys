@@ -29,6 +29,7 @@
         rupee: `<path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>`,
         calendar: `<path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>`,
         send: `<path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>`,
+        whatsapp: `<path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.2 1.26-1.68 1.32-.47.06-1.07.09-3.08-.74-2.58-1.07-4.22-3.71-4.35-3.89-.13-.17-1.04-1.39-1.04-2.65s.66-1.88.89-2.14c.24-.26.51-.32.68-.32.18 0 .35 0 .5.01.16.01.38-.06.59.45.23.55.77 1.88.84 2.02.07.15.11.32.02.5-.09.18-.14.29-.28.45-.14.16-.29.35-.42.47-.14.14-.29.29-.12.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.15.46.13.63-.07.17-.2.73-.85.92-1.15.2-.29.39-.24.66-.15.27.1 1.72.81 2.02.96.29.15.49.22.56.35.07.12.07.72-.17 1.4z"/>`,
     };
 
     const svg = (iconKey, w = 24, h = 24, extra = '') =>
@@ -121,7 +122,11 @@
 
         // Footer address
         document.querySelectorAll('[data-site="footer-address"]').forEach(el => {
-            el.textContent = s.address.compact;
+            if (s.mapUrl) {
+                el.innerHTML = `<a href="${s.mapUrl}" target="_blank" rel="noopener noreferrer">${s.address.compact}</a>`;
+            } else {
+                el.textContent = s.address.compact;
+            }
         });
 
         // Footer hours
@@ -145,13 +150,16 @@
         const supportHours = document.querySelector('[data-site="contact-support-hours"]');
         if (supportHours) supportHours.textContent = `Support: ${s.hours}`;
 
-        // Map
-        const mapIframe = document.querySelector('[data-site="map-embed"]');
-        if (mapIframe) mapIframe.src = s.mapEmbed;
+        // Map & Directions Link
+        const mapIframes = document.querySelectorAll('[data-site="map-embed"]');
+        mapIframes.forEach(iframe => {
+            if (s.mapEmbed) iframe.src = s.mapEmbed;
+        });
 
-        // OSM map
-        const osmFrame = document.querySelector('[data-site="osm-embed"]');
-        if (osmFrame) osmFrame.src = s.openStreetMap;
+        const mapLinks = document.querySelectorAll('[data-site="map-link"]');
+        mapLinks.forEach(link => {
+            if (s.mapUrl) link.href = s.mapUrl;
+        });
     }
 
     // ─── HOME PAGE ────────────────────────────────────────────────────────────
@@ -241,6 +249,11 @@
                                 ${svgViewbox('luggage')} ${v.luggage}
                             </div>
                         </div>
+                        ${v.ridePackage ? `
+                        <div class="fleet-ride-badge">
+                            ${svgViewbox('car')} <span>${v.ridePackage}</span>
+                        </div>
+                        ` : ''}
                         <ul class="fleet-features">
                             ${v.features.map(f => `<li>${svgViewbox('check')} ${f}</li>`).join('')}
                         </ul>
@@ -248,8 +261,12 @@
                             <div class="fleet-price">
                                 <span class="label">${v.priceLabel}</span>
                                 <span class="amount">${v.price}</span>
+                                ${v.priceNote ? `<span class="price-note">${v.priceNote}</span>` : ''}
                             </div>
-                            <a href="#contact" class="btn btn-outline btn-sm booking-link" data-car="${v.datacar}">${v.inquireLabel}</a>
+                            <a href="#contact" class="fleet-book-btn booking-link" data-car="${v.datacar}">
+                                <span>${v.inquireLabel}</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-7.85-1.42 1.42 5.43 5.43H5v2z"/></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -354,13 +371,10 @@
                         <div class="pkg-inclusions">
                             ${p.inclusions.map(inc => `<span class="pkg-inclusion-tag">${inc}</span>`).join('')}
                         </div>
-                        <div class="pkg-price-row">
-                            <div class="pkg-price">
-                                <span class="label">Starting From</span>
-                                <span class="amount">${p.price}</span>
-                                <span class="per">${p.perText}</span>
-                            </div>
-                            <a href="${waUrl(site.whatsapp, p.whatsappMessage)}" class="btn btn-accent btn-sm" target="_blank" rel="noopener" id="book-${p.id}-btn">${p.bookLabel}</a>
+                        <div class="pkg-action-row">
+                            <a href="${waUrl(site.whatsapp, p.whatsappMessage)}" class="btn btn-accent btn-pkg-book" target="_blank" rel="noopener" id="book-${p.id}-btn">
+                                ${svgViewbox('whatsapp')} <span>${p.bookLabel || 'Enquire on WhatsApp'}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -444,12 +458,9 @@
                 cards.forEach(card => {
                     const cat = card.getAttribute('data-category');
                     if (filter === 'all' || cat === filter) {
-                        card.style.display = 'flex';
-                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                        card.classList.remove('hidden');
                     } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                        card.classList.add('hidden');
                     }
                 });
             });

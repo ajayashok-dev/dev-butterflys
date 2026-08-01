@@ -83,10 +83,16 @@ img {
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.18));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .brand-logo {
+    transform: scale(1.03);
 }
 
 .footer .brand-logo {
     height: 100px;
+    max-width: 260px;
 }
 
 button, input, select, textarea {
@@ -174,6 +180,13 @@ button, input, select, textarea {
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn-sm {
+    padding: 8px 18px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
 }
 
 .btn-primary {
@@ -317,10 +330,41 @@ button, input, select, textarea {
     position: relative;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(180deg, rgba(11, 19, 32, 0.4) 0%, var(--bg-base) 100%), url('assets/images/hero-banner.svg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    overflow: hidden;
+    background-color: var(--bg-base);
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(11, 19, 32, 0.78) 0%, rgba(11, 19, 32, 0.65) 50%, var(--bg-base) 100%);
+    backdrop-filter: blur(1.5px);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-grid {
@@ -609,8 +653,9 @@ button, input, select, textarea {
 
 .fleet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    align-items: stretch;
 }
 
 .fleet-card {
@@ -621,6 +666,11 @@ button, input, select, textarea {
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+.fleet-card.hidden {
+    display: none !important;
 }
 
 .fleet-card:hover {
@@ -631,47 +681,57 @@ button, input, select, textarea {
 
 .fleet-img-container {
     position: relative;
-    height: 220px;
-    background-color: hsl(194, 58%, 10%);
+    height: 190px;
+    background: radial-gradient(circle at center, hsl(194, 58%, 12%) 0%, hsl(222, 47%, 9%) 100%);
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 .fleet-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: var(--transition-smooth);
 }
 
 .fleet-card:hover .fleet-img-container img {
-    transform: scale(1.08);
+    transform: scale(1.04);
 }
 
 .fleet-tag {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    background-color: var(--primary);
-    color: var(--text-primary);
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, hsl(164, 85%, 26%) 100%);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
     font-family: var(--font-heading);
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 2;
 }
 
 .fleet-details {
-    padding: 24px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 1 1 auto;
 }
 
 .fleet-name {
     font-family: var(--font-heading);
-    font-size: 20px;
+    font-size: 1.15rem;
     font-weight: 700;
+    color: var(--text-primary);
     margin-bottom: 8px;
+    line-height: 1.35;
 }
 
 .fleet-capacity {
@@ -679,9 +739,9 @@ button, input, select, textarea {
     align-items: center;
     gap: 16px;
     color: var(--text-secondary);
-    font-size: 14px;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -692,14 +752,14 @@ button, input, select, textarea {
 }
 
 .fleet-capacity-item svg {
-    width: 16px;
-    height: 16px;
-    fill: var(--text-muted);
+    width: 15px;
+    height: 15px;
+    fill: var(--accent);
 }
 
 .fleet-features {
     list-style: none;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -714,31 +774,131 @@ button, input, select, textarea {
 }
 
 .fleet-features li svg {
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     fill: var(--accent);
+    flex-shrink: 0;
+}
+
+.fleet-ride-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(244, 150, 27, 0.08);
+    border: 1px dashed rgba(244, 150, 27, 0.4);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.fleet-ride-badge svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--accent);
+    flex-shrink: 0;
 }
 
 .fleet-price-row {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    gap: 12px;
 }
 
 .fleet-price {
     font-family: var(--font-heading);
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .fleet-price span.label {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-muted);
     display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 2px;
+    font-weight: 600;
 }
 
 .fleet-price span.amount {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+    display: block;
+}
+
+.fleet-price span.price-note {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 3px;
+    line-height: 1.25;
+}
+
+.fleet-book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-family: var(--font-heading);
+    font-size: 13px;
     font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--accent) 0%, hsl(34, 95%, 44%) 100%);
+    color: hsl(194, 58%, 8%);
+    box-shadow: 0 4px 14px rgba(244, 150, 27, 0.35);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.fleet-book-btn:hover {
+    background: linear-gradient(135deg, hsl(34, 95%, 60%) 0%, var(--accent) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 150, 27, 0.55);
+    color: hsl(194, 58%, 6%);
+}
+
+.fleet-book-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    transition: transform 0.25s ease;
+}
+
+.fleet-book-btn:hover svg {
+    transform: translateX(3px);
+}
+
+.fleet-policy-banner {
+    margin-top: 40px;
+    padding: 16px 24px;
+    background: rgba(12, 74, 82, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.fleet-policy-banner strong {
     color: var(--accent);
 }
 
@@ -1005,7 +1165,18 @@ button, input, select, textarea {
 }
 
 .contact-form-card .booking-form {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+}
+
+.contact-form-card .btn {
+    width: 100%;
+    margin-top: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 .form-textarea {

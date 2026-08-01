@@ -60,7 +60,7 @@
       {
         "icon": "taxi",
         "title": "24/7 Taxi & Cab Service",
-        "description": "Anytime local rides, hospital runs, and outstation trips in Kozhikode and neighboring cities. Professional drivers ensure your trip is smooth and safe."
+        "description": "Anytime local rides, hospital runs, and city travels in Kozhikode and neighboring areas. Professional drivers ensure your trip is smooth and safe."
       },
       {
         "icon": "airport",
@@ -74,91 +74,235 @@
       },
       {
         "icon": "heart",
-        "title": "Pilgrimage & Wedding Rentals",
-        "description": "Premium luxury vehicles for grooms/brides, wedding parties, and group pilgrim packages (e.g. Sabarimala, Guruvayur, local temples and mosques)."
+        "title": "Pilgrimage & Temple Tours",
+        "description": "Customized devotional travel for Sabarimala, Guruvayur, Kadampuzha, and regional pilgrim circuits with experienced and courteous drivers."
+      },
+      {
+        "icon": "car",
+        "title": "Outstation & Intercity Rides",
+        "description": "Comfortable one-way and round trips across Kerala, Karnataka, and Tamil Nadu with transparent per-km billing and no hidden charges."
+      },
+      {
+        "icon": "shield",
+        "title": "Wedding & Corporate Rentals",
+        "description": "Premium luxury cars and spacious Tempo Travellers for wedding parties, executive business delegations, family functions, and group events."
       }
     ]
   },
   "fleet": {
     "sectionTag": "Choose Your Vehicle",
     "title": "Our Modern Fleet",
-    "description": "Clean, well-maintained, and air-conditioned vehicles for absolute comfort.",
+    "description": "Clean, well-maintained, and air-conditioned vehicles. Base rates include up to 80 km ride; extra km charges applicable thereafter.",
     "vehicles": [
       {
-        "id": "sedan",
+        "id": "airport-sedan",
         "category": "sedan",
         "image": "assets/images/sedan-cab.svg",
-        "alt": "Sedan Dzire/Etios cab",
-        "tag": "Popular",
+        "alt": "Airport Pickup and Drop Cab Calicut",
+        "tag": "Airport Special",
+        "name": "Calicut Airport Pickup & Drop (Dzire Car)",
+        "passengers": "4 Passengers",
+        "luggage": "Standard Luggage",
+        "ridePackage": "Direct Airport Transfer",
+        "features": [
+          "On-time Flight Tracking & AC",
+          "Direct CCJ / Cochin Drop & Pickup",
+          "Extra km charges applicable thereafter"
+        ],
+        "price": "₹1,500",
+        "priceLabel": "Starting From",
+        "priceNote": "*Airport transfer min rate",
+        "inquireLabel": "Book Cab",
+        "datacar": "Airport Pickup/Drop (Dzire Car)"
+      },
+      {
+        "id": "sedan-dzire",
+        "category": "sedan",
+        "image": "assets/images/sedan-cab.svg",
+        "alt": "Suzuki Dzire / Toyota Etios Sedan Cab",
+        "tag": "Most Popular",
         "name": "Suzuki Dzire / Toyota Etios",
         "passengers": "4 Passengers",
-        "luggage": "Large Luggage",
+        "luggage": "Standard Luggage",
+        "ridePackage": "Up to 80 km ride included",
         "features": [
-          "AC / Climate Control",
-          "Bluetooth Audio & Charging",
-          "Experienced Driver"
+          "Air Conditioned & Clean Interior",
+          "Comfortable Sedan Ride",
+          "Extra km charges applicable after 80 km"
         ],
-        "price": "₹12 / km",
+        "price": "₹2,000",
         "priceLabel": "Starting From",
-        "inquireLabel": "Inquire",
-        "datacar": "Sedan (Dzire/Etios)"
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Suzuki Dzire / Etios"
       },
       {
-        "id": "innova",
-        "category": "suv",
-        "image": "assets/images/innova-crysta.svg",
-        "alt": "Innova Crysta SUV cab",
-        "tag": "Premium Comfort",
-        "name": "Toyota Innova Crysta",
-        "passengers": "7 Passengers",
-        "luggage": "Extra Luggage Space",
-        "features": [
-          "Luxurious Seating",
-          "Rear AC Vents",
-          "Top Choice for Families"
-        ],
-        "price": "₹18 / km",
-        "priceLabel": "Starting From",
-        "inquireLabel": "Inquire",
-        "datacar": "Toyota Innova Crysta"
-      },
-      {
-        "id": "ertiga",
+        "id": "suv-tavera",
         "category": "suv",
         "image": "assets/images/ertiga-suv.svg",
-        "alt": "Maruti Ertiga SUV cab",
+        "alt": "Chevrolet Tavera SUV Cab",
+        "tag": "Budget Group",
+        "name": "Chevrolet Tavera",
+        "passengers": "7-8 Passengers",
+        "luggage": "Large Luggage",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "Spacious 7-8 Seater SUV",
+          "Ideal for Family & Ghat Trips",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹2,500",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Chevrolet Tavera"
+      },
+      {
+        "id": "suv-ertiga",
+        "category": "suv",
+        "image": "assets/images/ertiga-suv.svg",
+        "alt": "Maruti Suzuki Ertiga SUV Cab",
         "tag": "Best Value",
         "name": "Maruti Suzuki Ertiga",
         "passengers": "6 Passengers",
         "luggage": "Standard Luggage",
+        "ridePackage": "Up to 80 km ride included",
         "features": [
-          "Fuel Efficient / Low Rate",
-          "Air Conditioned",
-          "Ideal for Small Groups"
+          "Comfortable 6-Seater Family Ride",
+          "Smooth & Fuel-Efficient Cruising",
+          "Extra km charges applicable after 80 km"
         ],
-        "price": "₹15 / km",
+        "price": "₹2,800",
         "priceLabel": "Starting From",
-        "inquireLabel": "Inquire",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
         "datacar": "Maruti Ertiga"
       },
       {
-        "id": "traveller",
+        "id": "suv-innova",
+        "category": "suv",
+        "image": "assets/images/innova-crysta.svg",
+        "alt": "Toyota Innova SUV Cab",
+        "tag": "Reliable SUV",
+        "name": "Toyota Innova",
+        "passengers": "7 Passengers",
+        "luggage": "Extra Luggage Space",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "Proven Long-Distance Highway Comfort",
+          "Spacious 7 Seats with Carrier",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹3,000",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Toyota Innova"
+      },
+      {
+        "id": "suv-innova-crysta",
+        "category": "suv",
+        "image": "assets/images/innova-crysta.svg",
+        "alt": "Toyota Innova Crysta SUV Cab",
+        "tag": "Premium Comfort",
+        "name": "Toyota Innova Crysta",
+        "passengers": "7 Passengers",
+        "luggage": "Extra Luggage Space",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "Luxury Captain Seats & Dual AC",
+          "Premium Executive Touring",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹3,500",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Toyota Innova Crysta"
+      },
+      {
+        "id": "traveller-14",
         "category": "traveller",
         "image": "assets/images/tempo-traveller.svg",
-        "alt": "Tempo Traveller tour van",
-        "tag": "Group Tours",
-        "name": "Force Tempo Traveller",
-        "passengers": "12-17 Passengers",
-        "luggage": "Huge Luggage Carrier",
+        "alt": "Force Tempo Traveller 14 Seater",
+        "tag": "14 Seater",
+        "name": "Force Tempo Traveller (14 Seater)",
+        "passengers": "14 Passengers",
+        "luggage": "Roof Luggage Carrier",
+        "ridePackage": "Up to 80 km ride included",
         "features": [
-          "Dual AC System",
-          "Pushback Recliner Seats",
-          "LED TV & Sound System"
+          "Pushback Recliner Seats & AC",
+          "Ideal for Family & Corporate Trips",
+          "Extra km charges applicable after 80 km"
         ],
-        "price": "₹24 / km",
+        "price": "₹4,000",
         "priceLabel": "Starting From",
-        "inquireLabel": "Inquire",
-        "datacar": "Tempo Traveller"
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Tempo Traveller 14 Seat"
+      },
+      {
+        "id": "traveller-17",
+        "category": "traveller",
+        "image": "assets/images/tempo-traveller.svg",
+        "alt": "Force Tempo Traveller 17 Seater",
+        "tag": "17 Seater",
+        "name": "Force Tempo Traveller (17 Seater)",
+        "passengers": "17 Passengers",
+        "luggage": "Roof Luggage Carrier",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "Pushback Recliner Seats & Dual AC",
+          "Music System & Mic Available",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹4,500",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Tempo Traveller 17 Seat"
+      },
+      {
+        "id": "traveller-20",
+        "category": "traveller",
+        "image": "assets/images/tempo-traveller.svg",
+        "alt": "Force Tempo Traveller 20 Seater",
+        "tag": "20 Seater",
+        "name": "Force Tempo Traveller (20 Seater)",
+        "passengers": "20 Passengers",
+        "luggage": "Heavy Luggage Space",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "High Roof & Ample Legroom",
+          "Audio/Video Entertainment & Dual AC",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹5,500",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Tempo Traveller 20 Seat"
+      },
+      {
+        "id": "traveller-26",
+        "category": "traveller",
+        "image": "assets/images/tempo-traveller.svg",
+        "alt": "Force Tempo Traveller 26 Seater",
+        "tag": "26 Seater Mini Bus",
+        "name": "Force Tempo Traveller (26 Seater)",
+        "passengers": "26 Passengers",
+        "luggage": "Dedicated Luggage Carrier",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "Large Group Touring & AC",
+          "Spacious 26-Seater Mini Bus Layout",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹6,500",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Tempo Traveller 26 Seat"
       }
     ]
   },
@@ -199,28 +343,48 @@
     "formSubmitLabel": "Send Message On WhatsApp",
     "vehicleOptions": [
       {
-        "value": "Suzuki Dzire / Toyota Etios (Sedan)",
-        "label": "Suzuki Dzire / Toyota Etios"
+        "value": "Airport Pickup & Drop (Dzire Car)",
+        "label": "Airport Pickup & Drop - Dzire (Min ₹1,500)"
       },
       {
-        "value": "Toyota Innova Crysta (SUV)",
-        "label": "Toyota Innova Crysta"
+        "value": "Suzuki Dzire / Toyota Etios (Sedan)",
+        "label": "Suzuki Dzire / Toyota Etios (Min ₹2,000)"
+      },
+      {
+        "value": "Chevrolet Tavera (SUV)",
+        "label": "Chevrolet Tavera (Min ₹2,500)"
       },
       {
         "value": "Maruti Suzuki Ertiga (SUV)",
-        "label": "Maruti Suzuki Ertiga"
+        "label": "Maruti Suzuki Ertiga (Min ₹2,800)"
       },
       {
-        "value": "Force Tempo Traveller (Van)",
-        "label": "Force Tempo Traveller"
+        "value": "Toyota Innova (SUV)",
+        "label": "Toyota Innova (Min ₹3,000)"
       },
       {
-        "value": "Custom Tour Packages",
-        "label": "Custom Tour Packages"
+        "value": "Toyota Innova Crysta (SUV)",
+        "label": "Toyota Innova Crysta (Min ₹3,500)"
       },
       {
-        "value": "Airport Pickup / Drop",
-        "label": "Airport Pickup / Drop"
+        "value": "Force Tempo Traveller (14 Seater)",
+        "label": "Tempo Traveller 14 Seater (Min ₹4,000)"
+      },
+      {
+        "value": "Force Tempo Traveller (17 Seater)",
+        "label": "Tempo Traveller 17 Seater (Min ₹4,500)"
+      },
+      {
+        "value": "Force Tempo Traveller (20 Seater)",
+        "label": "Tempo Traveller 20 Seater (Min ₹5,500)"
+      },
+      {
+        "value": "Force Tempo Traveller (26 Seater)",
+        "label": "Tempo Traveller 26 Seater (Min ₹6,500)"
+      },
+      {
+        "value": "Custom Kerala Tour Package",
+        "label": "Custom Kerala Tour Package"
       }
     ]
   }

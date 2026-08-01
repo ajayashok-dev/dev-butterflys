@@ -1,11 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // ==========================================
+    // 0. Ensure Video Autoplay (Logos & Backgrounds)
+    // ==========================================
+    const autoplayVideos = document.querySelectorAll('video.brand-logo, .brand-logo video, .hero-video-bg video, video[autoplay]');
+    autoplayVideos.forEach(video => {
+        video.muted = true;
+        video.playsInline = true;
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                // Auto-play was prevented; retry on first interaction
+                const onFirstTouch = () => {
+                    video.play().catch(() => {});
+                    window.removeEventListener('touchstart', onFirstTouch);
+                    window.removeEventListener('click', onFirstTouch);
+                };
+                window.addEventListener('touchstart', onFirstTouch, { once: true, passive: true });
+                window.addEventListener('click', onFirstTouch, { once: true, passive: true });
+            });
+        }
+    });
+
+    // ==========================================
     // 1. Sticky Header scroll effect
     // ==========================================
     const header = document.getElementById('header');
     
     const handleScroll = () => {
+        if (!header) return;
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
@@ -48,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             if (window.scrollY >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
@@ -110,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-review');
     const dotsContainer = document.getElementById('slider-dots');
     
-    if (track && cards.length > 0) {
+    if (track && cards.length > 0 && dotsContainer) {
         let currentIndex = 0;
         const totalCards = cards.length;
         
@@ -125,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dotsContainer.appendChild(dot);
         });
         
-        const dots = document.querySelectorAll('.dot');
+        const dots = dotsContainer.querySelectorAll('.dot');
         
         const updateSlider = () => {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -198,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const pickup = document.getElementById('booking-pickup').value.trim();
             const date = document.getElementById('booking-date').value;
             
-            const msg = `*New Booking Inquiry - Butterflys Tours %26 Travels* \n\n` +
+            const msg = `*New Booking Inquiry - Butterflys Tours & Travels* \n\n` +
                         `*Name:* ${name}\n` +
                         `*Service Requested:* ${service}\n` +
                         `*Pickup Location:* ${pickup}\n` +
@@ -219,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const option = document.getElementById('contact-service').value;
             const userMsg = document.getElementById('contact-msg').value.trim();
             
-            const msg = `*Inquiry via Website - Butterflys Tours %26 Travels* \n\n` +
+            const msg = `*Inquiry via Website - Butterflys Tours & Travels* \n\n` +
                         `*Name:* ${name}\n` +
                         `*Interested In:* ${option}\n` +
                         `*Details/Requirements:* ${userMsg}\n\n` +

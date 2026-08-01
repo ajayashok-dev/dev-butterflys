@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="airport-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c4a52"/>
+      <stop offset="100%" stop-color="#072b30"/>
+    </linearGradient>
+    <linearGradient id="plane-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4961b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#airport-bg)"/>
+  <circle cx="1300" cy="220" r="140" fill="#f4961b" opacity="0.15"/>
+  <path d="M0 720C300 660 600 740 1000 680C1300 640 1500 670 1600 650V900H0Z" fill="#041a1d"/>
+  <!-- Stylized Airplane -->
+  <g transform="translate(1050, 240) scale(3.5)" fill="url(#plane-gold)">
+    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l8 2.5z"/>
+  </g>
+  <path d="M100 760C400 700 800 800 1200 740C1400 710 1500 730 1600 720" fill="none" stroke="#f4961b" stroke-width="10" stroke-linecap="round" opacity="0.4"/>
+  <text x="140" y="180" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Airport Transfers</text>
+  <text x="140" y="250" fill="#7eddd1" font-family="Segoe UI, Arial, sans-serif" font-size="34">24/7 Calicut (CCJ) &amp; Cochin (COK) Pickup &amp; Drop</text>
+</svg>

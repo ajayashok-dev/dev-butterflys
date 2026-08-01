@@ -1,13 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#e0f2fe"/>
-  <rect x="0" y="560" width="1200" height="240" fill="#bae6fd"/>
-  <rect x="120" y="220" width="900" height="270" rx="70" fill="#0f766e"/>
-  <rect x="220" y="180" width="320" height="140" rx="40" fill="#f8fafc"/>
-  <rect x="590" y="180" width="250" height="140" rx="40" fill="#f8fafc"/>
-  <circle cx="360" cy="560" r="100" fill="#111827"/>
-  <circle cx="840" cy="560" r="100" fill="#111827"/>
-  <circle cx="360" cy="560" r="50" fill="#f8fafc"/>
-  <circle cx="840" cy="560" r="50" fill="#f8fafc"/>
-  <text x="170" y="140" fill="#0f172a" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">Tempo Traveller</text>
-  <text x="170" y="190" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="30">Group tours and family trips</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="van-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1726"/>
+      <stop offset="50%" stop-color="#1b2a47"/>
+      <stop offset="100%" stop-color="#07131f"/>
+    </linearGradient>
+    <linearGradient id="van-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="40%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="van-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="van-light" cx="0%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="16" fill="url(#van-bg)"/>
+  <line x1="40" y1="360" x2="760" y2="360" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/>
+  <ellipse cx="400" cy="365" rx="340" ry="25" fill="#030811" opacity="0.8"/>
+
+  <!-- Headlight beam -->
+  <polygon points="120,290 0,250 0,340 120,310" fill="url(#van-light)"/>
+
+  <!-- Roof Luggage Carrier -->
+  <rect x="250" y="80" width="460" height="20" rx="4" fill="none" stroke="#f4961b" stroke-width="3"/>
+  <line x1="320" y1="80" x2="320" y2="100" stroke="#f4961b" stroke-width="2"/>
+  <line x1="420" y1="80" x2="420" y2="100" stroke="#f4961b" stroke-width="2"/>
+  <line x1="520" y1="80" x2="520" y2="100" stroke="#f4961b" stroke-width="2"/>
+  <line x1="620" y1="80" x2="620" y2="100" stroke="#f4961b" stroke-width="2"/>
+  <!-- Luggage boxes on roof -->
+  <rect x="340" y="65" width="120" height="15" rx="3" fill="#3b82f6" opacity="0.8"/>
+  <rect x="480" y="60" width="100" height="20" rx="3" fill="#10b981" opacity="0.8"/>
+
+  <!-- High-Roof Tempo Traveller Body -->
+  <path d="M120 290 Q130 220 180 180 L230 105 Q250 100 300 100 L710 100 Q740 100 740 130 L740 295 L730 325 Q715 335 680 335 L620 335 Q600 280 540 280 Q480 280 460 335 L300 335 Q280 280 220 280 Q160 280 140 335 L90 335 Q70 335 70 305 L80 290 Q90 285 120 290 Z" fill="url(#van-body)" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Multiple Passenger Windows -->
+  <path d="M235 115 L285 115 L285 190 L185 190 Q215 135 235 115 Z" fill="url(#van-glass)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="300" y="115" width="90" height="75" rx="4" fill="url(#van-glass)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="405" y="115" width="90" height="75" rx="4" fill="url(#van-glass)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="510" y="115" width="90" height="75" rx="4" fill="url(#van-glass)" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="615" y="115" width="105" height="75" rx="4" fill="url(#van-glass)" stroke="#60a5fa" stroke-width="1.5"/>
+
+  <!-- Passenger Door Line -->
+  <line x1="397" y1="115" x2="397" y2="330" stroke="#0f172a" stroke-width="2.5"/>
+
+  <!-- Headlights & Taillights -->
+  <ellipse cx="110" cy="285" rx="14" ry="10" fill="#60a5fa"/>
+  <rect x="732" y="240" width="8" height="50" rx="3" fill="#ef4444"/>
+
+  <!-- Wheels Outer -->
+  <!-- Front Wheel -->
+  <circle cx="220" cy="335" r="54" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="220" cy="335" r="32" fill="#1e293b"/>
+  <circle cx="220" cy="335" r="14" fill="#64748b"/>
+  <line x1="220" y1="305" x2="220" y2="365" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="190" y1="335" x2="250" y2="335" stroke="#cbd5e1" stroke-width="2.5"/>
+  
+  <!-- Rear Wheel -->
+  <circle cx="540" cy="335" r="54" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="540" cy="335" r="32" fill="#1e293b"/>
+  <circle cx="540" cy="335" r="14" fill="#64748b"/>
+  <line x1="540" y1="305" x2="540" y2="365" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="510" y1="335" x2="570" y2="335" stroke="#cbd5e1" stroke-width="2.5"/>
+
+  <text x="50" y="55" fill="#f8fafc" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" opacity="0.9">GROUP TOURING VAN</text>
+  <text x="50" y="80" fill="#f4961b" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="1">FORCE TEMPO TRAVELLER (14 • 17 • 20 • 26 SEAT)</text>
 </svg>

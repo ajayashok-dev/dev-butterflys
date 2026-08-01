@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="mysore-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b1d5a"/>
+      <stop offset="100%" stop-color="#1e1035"/>
+    </linearGradient>
+    <linearGradient id="palace-gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#mysore-bg)"/>
+  <circle cx="1300" cy="220" r="140" fill="#fbbf24" opacity="0.15"/>
+  <path d="M0 720C300 680 600 750 900 700C1200 650 1400 680 1600 660V900H0Z" fill="#2d1245"/>
+  <path d="M400 720H1200V600L1100 520H500L400 600Z" fill="url(#palace-gold)" opacity="0.8"/>
+  <circle cx="800" cy="470" r="60" fill="#fbbf24"/>
+  <rect x="785" y="410" width="30" height="60" fill="#f59e0b"/>
+  <path d="M100 780C400 720 800 820 1200 760C1400 730 1500 750 1600 740" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" opacity="0.5"/>
+  <text x="140" y="180" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">Mysore</text>
+  <text x="140" y="250" fill="#fde68a" font-family="Segoe UI, Arial, sans-serif" font-size="34">Palaces, Gardens &amp; Heritage Wonders</text>
+</svg>

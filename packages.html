@@ -25,301 +25,8 @@
     <meta name="theme-color" content="#0c4a52">
 
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* ── Page Hero ── */
-        .page-hero {
-            min-height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, hsl(222,47%,9%) 0%, hsl(164,60%,12%) 50%, hsl(222,47%,9%) 100%);
-            position: relative;
-            overflow: hidden;
-            padding-top: var(--header-height);
-        }
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 70% 60% at 10% 50%, hsla(164,85%,35%,0.2) 0%, transparent 70%),
-                radial-gradient(ellipse 50% 40% at 90% 20%, hsla(38,100%,55%,0.14) 0%, transparent 70%);
-        }
-        .page-hero-content {
-            position: relative;
-            text-align: center;
-            z-index: 1;
-            padding: 0 20px;
-        }
-        .page-hero-content .section-tag { display: inline-block; margin-bottom: 16px; }
-        .page-hero-title {
-            font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-        .page-hero-desc {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 560px;
-            margin: 0 auto 28px;
-        }
-
-        /* ── Package Filter Tabs ── */
-        .pkg-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 52px;
-        }
-
-        /* ── Package Cards Grid ── */
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 28px;
-        }
-        @media (max-width: 720px) {
-            .packages-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ── Package Card ── */
-        .pkg-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-        .pkg-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--border-color-glow);
-            box-shadow: var(--shadow-accent);
-        }
-        .pkg-card.featured { border-color: hsla(38,100%,55%,0.5); }
-        .pkg-card.featured::before {
-            content: '★ Most Popular';
-            position: absolute;
-            top: 16px;
-            right: -28px;
-            background: var(--amber);
-            color: #000;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            padding: 5px 36px;
-            transform: rotate(35deg);
-            transform-origin: top right;
-        }
-
-        .pkg-img-wrap {
-            position: relative;
-            height: 210px;
-            overflow: hidden;
-        }
-        .pkg-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        .pkg-card:hover .pkg-img-wrap img { transform: scale(1.06); }
-
-        .pkg-img-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%);
-        }
-
-        .pkg-duration-badge {
-            position: absolute;
-            bottom: 14px;
-            left: 16px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 5px 14px;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .pkg-duration-badge svg { width: 14px; height: 14px; fill: currentColor; }
-
-        .pkg-category-badge {
-            position: absolute;
-            top: 14px;
-            left: 16px;
-            background: rgba(0,0,0,0.55);
-            backdrop-filter: blur(4px);
-            color: #fff;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        /* Card Body */
-        .pkg-body {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        .pkg-name {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        .pkg-desc {
-            color: var(--text-secondary);
-            font-size: 0.93rem;
-            line-height: 1.65;
-            margin-bottom: 18px;
-        }
-
-        /* Highlights */
-        .pkg-highlights {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        .pkg-highlights li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-        }
-        .pkg-highlights li svg {
-            width: 16px;
-            height: 16px;
-            fill: var(--accent);
-            flex-shrink: 0;
-        }
-
-        /* Inclusions Row */
-        .pkg-inclusions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
-        .pkg-inclusion-tag {
-            background: hsla(164,85%,30%,0.15);
-            border: 1px solid hsla(164,85%,30%,0.3);
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
-        }
-
-        /* Price Row */
-        .pkg-price-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .pkg-price { display: flex; flex-direction: column; }
-        .pkg-price .label { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 2px; }
-        .pkg-price .amount {
-            font-family: var(--font-heading);
-            font-size: 1.55rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .pkg-price .per { color: var(--text-muted); font-size: 0.78rem; }
-
-        /* Hidden filter */
-        .pkg-card.hidden { display: none; }
-
-        /* ── Why Choose Section ── */
-        .why-choose {
-            margin-top: 80px;
-            padding: 64px 0;
-            border-top: 1px solid var(--border-color);
-        }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-        .why-item {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 28px 20px;
-            text-align: center;
-            transition: var(--transition-smooth);
-        }
-        .why-item:hover {
-            border-color: var(--border-color-glow);
-            transform: translateY(-4px);
-        }
-        .why-icon {
-            width: 52px;
-            height: 52px;
-            background: hsla(164,85%,30%,0.15);
-            border: 1px solid hsla(164,85%,30%,0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-        }
-        .why-icon svg { width: 24px; height: 24px; fill: var(--accent); }
-        .why-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-        .why-item p { color: var(--text-secondary); font-size: 0.87rem; line-height: 1.6; }
-
-        /* ── Custom Package CTA ── */
-        .custom-pkg-cta {
-            margin-top: 64px;
-            background: linear-gradient(135deg, hsl(222,47%,13%) 0%, hsl(222,47%,10%) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 52px 32px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .custom-pkg-cta::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 60% 80% at 50% 0%, hsla(164,85%,35%,0.12) 0%, transparent 70%);
-        }
-        .custom-pkg-cta h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.6rem, 3vw, 2.3rem);
-            font-weight: 700;
-            margin-bottom: 12px;
-            position: relative;
-        }
-        .custom-pkg-cta p { color: var(--text-secondary); margin-bottom: 32px; position: relative; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .custom-pkg-cta .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/packages.css">
 </head>
 
 <body data-page="packages">
@@ -328,7 +35,7 @@
     <header class="header" id="header">
         <div class="container">
             <a href="index.html#home" class="logo" id="logo-link">
-                <img src="assets/images/butterflys_holidays_logos/main_logo.png" alt="Butterflys Holidays Calicut" class="brand-logo">
+                <img src="assets/images/butterflys_holidays_logos/image.png" alt="Butterflys Holidays Calicut" class="brand-logo">
             </a>
 
             <nav class="nav-menu" id="nav-menu">
@@ -354,6 +61,13 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
+        <div class="hero-video-bg">
+            <video autoplay loop muted playsinline poster="assets/images/hero-banner.svg">
+                <source src="assets/videos/hero-background.mp4" type="video/mp4">
+                <source src="assets/videos/need_to_background_only_shbo.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
         <div class="page-hero-content">
             <span class="section-tag" data-pkg="hero-tag"></span>
             <h1 class="page-hero-title"><span data-pkg="hero-title"></span> <span class="text-gradient" data-pkg="hero-gradient"></span></h1>
@@ -377,10 +91,11 @@
 
             <div class="pkg-filters">
                 <button class="tab-btn active" data-filter="all" id="pkg-filter-all">All Packages</button>
+                <button class="tab-btn" data-filter="airport" id="pkg-filter-airport">Airport Transfers</button>
                 <button class="tab-btn" data-filter="nature" id="pkg-filter-nature">Nature &amp; Hills</button>
+                <button class="tab-btn" data-filter="outstation" id="pkg-filter-outstation">Outstation &amp; Heritage</button>
                 <button class="tab-btn" data-filter="pilgrimage" id="pkg-filter-pilgrimage">Pilgrimage</button>
                 <button class="tab-btn" data-filter="beach" id="pkg-filter-beach">Beach &amp; Coast</button>
-                <button class="tab-btn" data-filter="outstation" id="pkg-filter-outstation">Outstation</button>
             </div>
 
             <!-- Package Cards rendered by content-loader.js from data/packages.json -->
@@ -419,7 +134,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand">
                     <a href="index.html#home" class="logo mb-2">
-                        <img src="assets/images/butterflys_holidays_logos/main_logo.png" alt="Butterflys Holidays Calicut" class="brand-logo">
+                        <img src="assets/images/butterflys_holidays_logos/image.png" alt="Butterflys Holidays Calicut" class="brand-logo">
                     </a>
                     <p data-site="footer-about"></p>
                 </div>
@@ -456,7 +171,7 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/content-loader.js"></script>
 </body>
 

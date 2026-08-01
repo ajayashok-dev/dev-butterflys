@@ -19,8 +19,8 @@
     "facebook": "https://www.facebook.com/",
     "instagram": "https://www.instagram.com/"
   },
-  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d999.4711774017176!2d75.82825408751809!3d11.316872151579709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1783361921796!5m2!1sen!2sin",
-  "openStreetMap": "https://www.openstreetmap.org/export/embed.html?bbox=75.815%2C11.305%2C75.845%2C11.325&layer=mapnik&marker=11.316586%2C75.82878",
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4029.310835291288!2d75.83020657513401!3d11.323738248859911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65d0075d1e22f%3A0x387aedb1cc658030!2sButterflys%20Holidays%20Calicut!5e1!3m2!1sen!2sin!4v1785610137328!5m2!1sen!2sin",
+  "mapUrl": "https://maps.app.goo.gl/dqixNsbKBsNrPyULA",
   "footer": {
     "about": "Professional travels partner based in Kozhikode. Providing 24-hour safe journeys, reliable taxis, and complete holiday tours since 2017.",
     "copyright": "© 2026 Butterflys Tours & Travels. All rights reserved.",
