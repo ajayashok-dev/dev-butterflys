@@ -342,8 +342,72 @@ document.addEventListener('DOMContentLoaded', () => {
             // Scroll smoothly to contact section
             const contactSection = document.getElementById('contact');
             if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
+                const headerOffset = header ? header.offsetHeight + 10 : 80;
+                const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
     });
+
+    // ==========================================
+    // 8. Smooth Scrolling for All Anchor Links & Hash Navigation
+    // ==========================================
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href*="#"]');
+        if (!anchor) return;
+
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const urlParts = href.split('#');
+        const pathPart = urlParts[0];
+        const targetId = urlParts[1];
+
+        if (!targetId) return;
+
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const isCurrentPage = pathPart === '' || pathPart === currentPath || (currentPath === 'index.html' && pathPart === 'index.html');
+
+        if (isCurrentPage) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                const headerOffset = header ? header.offsetHeight + 10 : 80;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                if (history.pushState) {
+                    history.pushState(null, null, `#${targetId}`);
+                }
+            }
+        }
+    });
+
+    // Handle smooth scroll on initial page load if URL has hash
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            setTimeout(() => {
+                const headerOffset = header ? header.offsetHeight + 10 : 80;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 150);
+        }
+    }
 });
