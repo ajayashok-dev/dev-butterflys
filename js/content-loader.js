@@ -76,12 +76,18 @@
         }
 
         // Navigation Menu
-        const navMenu = document.getElementById('nav-menu');
-        if (navMenu && s.nav && s.nav.items) {
-            navMenu.innerHTML = s.nav.items.map(item => `
-                <a href="${item.href}" class="nav-link">${item.label}</a>
-            `).join('');
-            // Optional: highlight active link based on current page/hash could be added here
+        const navLinksWrapper = document.getElementById('nav-links-wrapper') || document.getElementById('nav-menu');
+        if (navLinksWrapper && s.nav && s.nav.items) {
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            navLinksWrapper.innerHTML = s.nav.items.map(item => {
+                let isActive = false;
+                if (currentPath === 'index.html' || currentPath === '') {
+                    isActive = item.href.includes('#home') || item.href === 'index.html';
+                } else if (item.href === currentPath) {
+                    isActive = true;
+                }
+                return `<a href="${item.href}" class="nav-link ${isActive ? 'active' : ''}">${item.label}</a>`;
+            }).join('');
         }
 
         // Phone links

@@ -218,3 +218,23 @@
 }
 .gallery-cta p { color: rgba(255,255,255,0.85); margin-bottom: 28px; position: relative; }
 .gallery-cta .btn { position: relative; }
+
+/* Responsive Video Hero */
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 260px;
+        padding-top: calc(var(--header-height) + 15px);
+    }
+    .page-hero .hero-video-bg {
+        height: 100%;
+    }
+    .page-hero .hero-video-bg video {
+        object-fit: contain;
+        object-position: center;
+        opacity: 0.95;
+    }
+    .page-hero .hero-video-overlay {
+        background: linear-gradient(180deg, rgba(11, 19, 32, 0.3) 0%, rgba(11, 19, 32, 0.75) 100%);
+        backdrop-filter: none;
+    }
+}
