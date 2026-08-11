@@ -426,18 +426,42 @@
         // Gallery grid
         const grid = document.getElementById('gallery-grid');
         if (grid) {
-            grid.innerHTML = d.items.map(item => `
-                <div class="gallery-item" data-category="${item.category}" data-caption="${item.caption}">
-                    <span class="gallery-tag-badge">${item.badge}</span>
-                    <img src="${item.src}" alt="${item.alt}" loading="lazy">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-label">
-                            ${svgViewbox(item.iconType === 'car' ? 'car' : item.iconType === 'heart' ? 'heart' : item.iconType === 'person' ? 'person' : 'location')}
-                            ${item.label}
-                        </span>
+            grid.innerHTML = d.items.map(item => {
+                if (item.type === 'video' || item.video) {
+                    return `
+                        <div class="gallery-item video-item" data-category="${item.category}" data-caption="${item.caption}" data-video="${item.video}">
+                            <span class="gallery-tag-badge video-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right:4px;"><path d="M8 5v14l11-7z"/></svg>
+                                ${item.badge}
+                            </span>
+                            <img src="${item.src}" alt="${item.alt}" loading="lazy">
+                            <div class="video-play-overlay">
+                                <div class="play-icon-circle">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                            <div class="gallery-item-overlay">
+                                <span class="gallery-item-label">
+                                    ${svgViewbox(item.iconType === 'car' ? 'car' : item.iconType === 'heart' ? 'heart' : item.iconType === 'person' ? 'person' : 'location')}
+                                    ${item.label}
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                }
+                return `
+                    <div class="gallery-item" data-category="${item.category}" data-caption="${item.caption}">
+                        <span class="gallery-tag-badge">${item.badge}</span>
+                        <img src="${item.src}" alt="${item.alt}" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-item-label">
+                                ${svgViewbox(item.iconType === 'car' ? 'car' : item.iconType === 'heart' ? 'heart' : item.iconType === 'person' ? 'person' : 'location')}
+                                ${item.label}
+                            </span>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
 
             // Re-bind gallery interactions after render
             bindGalleryFilter();
@@ -542,24 +566,50 @@
         const caption = document.getElementById('lightbox-caption');
         const close = document.getElementById('lightbox-close');
         const prev = document.getElementById('lightbox-prev');
-        const next = document.getElementById('lightbox-next');
+        const video = document.getElementById('lightbox-video');
         if (!overlay) return;
 
         let currentIdx = 0;
         let visibleItems = [];
         const getVisible = () => [...document.querySelectorAll('.gallery-item:not(.hidden)')];
 
+        const displayItem = (item) => {
+            if (!item) return;
+            const videoSrc = item.getAttribute('data-video');
+            if (videoSrc && video) {
+                img.style.display = 'none';
+                video.style.display = 'block';
+                video.src = videoSrc;
+                video.play().catch(() => {});
+            } else {
+                if (video) {
+                    video.pause();
+                    video.style.display = 'none';
+                    video.src = '';
+                }
+                img.style.display = 'block';
+                const imgEl = item.querySelector('img');
+                if (imgEl) {
+                    img.src = imgEl.src;
+                    img.alt = imgEl.alt;
+                }
+            }
+            caption.textContent = item.getAttribute('data-caption') || '';
+        };
+
         const openLightbox = (idx) => {
             visibleItems = getVisible();
             currentIdx = idx;
             const item = visibleItems[currentIdx];
-            img.src = item.querySelector('img').src;
-            img.alt = item.querySelector('img').alt;
-            caption.textContent = item.getAttribute('data-caption') || '';
+            displayItem(item);
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         };
         const closeLightbox = () => {
+            if (video) {
+                video.pause();
+                video.src = '';
+            }
             overlay.classList.remove('active');
             document.body.style.overflow = '';
         };
@@ -567,9 +617,7 @@
             visibleItems = getVisible();
             currentIdx = (currentIdx + dir + visibleItems.length) % visibleItems.length;
             const item = visibleItems[currentIdx];
-            img.src = item.querySelector('img').src;
-            img.alt = item.querySelector('img').alt;
-            caption.textContent = item.getAttribute('data-caption') || '';
+            displayItem(item);
         };
 
         document.querySelectorAll('.gallery-item').forEach(item => {

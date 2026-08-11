@@ -143,6 +143,7 @@
             <div class="gallery-filters">
                 <button class="tab-btn active" data-filter="all" id="filter-all">All Vehicles</button>
                 <button class="tab-btn" data-filter="traveller" id="filter-traveller">Tempo Travellers</button>
+                <button class="tab-btn" data-filter="minibus" id="filter-minibus">Mini Bus</button>
                 <button class="tab-btn" data-filter="suv" id="filter-suv">Tavera & SUVs</button>
                 <button class="tab-btn" data-filter="luxury" id="filter-luxury">Luxury Edition</button>
             </div>
@@ -166,36 +167,82 @@
     </section>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col footer-brand">
+                <!-- Col 1 -->
+                <div class="footer-col footer-about">
                     <a href="index.html#home" class="logo mb-2">
                         <img src="assets/images/butterflys_holidays_logos/image.png" alt="Butterflys Holidays Calicut" class="brand-logo">
                     </a>
                     <p data-site="footer-about"></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" class="social-btn" aria-label="Facebook"
+                            data-site="social-facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/butterflys_holidays_calicut?igsh=Z3NoM3l6eGphYmFz" class="social-btn" aria-label="Instagram"
+                            data-site="social-instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.8 2a3.8 3.8 0 0 0-3.8 3.8v8.4c0 2.1 1.7 3.8 3.8 3.8h8.4c2.1 0 3.8-1.7 3.8-3.8V7.8c0-2.1-1.7-3.8-3.8-3.8H7.0m5 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4m0 2a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m3.25-2.75a.75.75 0 1 1 .001 1.501.75.75 0 0 1-.001-1.501z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Col 2 -->
                 <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="index.html#fleet">Our Fleet</a></li>
                         <li><a href="packages.html">Tour Packages</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="index.html#fleet">Our Fleet</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="index.html#contact">Inquiries</a></li>
                     </ul>
                 </div>
+
+                <!-- Col 3 -->
                 <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+917736587699" data-site="footer-phone"></a></li>
-                        <li data-site="footer-hours"></li>
-                        <li data-site="footer-address"></li>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Local Taxi Runs</a></li>
+                        <li><a href="index.html#services">Airport Transfers</a></li>
+                        <li><a href="packages.html">Wayanad Packages</a></li>
+                        <li><a href="packages.html">Munnar Packages</a></li>
+                        <li><a href="index.html#services">Wedding Car Rental</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul class="footer-links" style="color: var(--text-secondary); font-size: 14px; gap: 16px;">
+                        <li>
+                            <strong>Open Hours:</strong><br>
+                            Open 24 Hours / 7 Days
+                        </li>
+                        <li>
+                            <strong>Location:</strong><br>
+                            Near GHSS School, Parambil Bazar, Kakkodi, Kozhikode
+                        </li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p data-site="footer-copyright"></p>
+                <div class="footer-payments">
+                    <span>Payment Methods:</span>
+                    <div class="payment-badge">UPI / GooglePay</div>
+                    <div class="payment-badge">Cash</div>
+                </div>
             </div>
         </div>
     </footer>
@@ -210,6 +257,7 @@
                 <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
             </button>
             <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            <video class="lightbox-video" id="lightbox-video" controls style="display:none; max-width:90vw; max-height:80vh; border-radius:8px;"></video>
             <p class="lightbox-caption" id="lightbox-caption"></p>
         </div>
         <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">

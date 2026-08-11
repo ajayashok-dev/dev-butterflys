@@ -7,12 +7,12 @@
   },
   "items": [
     {
-      "category": "traveller",
+      "category": "minibus",
       "src": "assets/images/gallery/img1.jpeg",
-      "alt": "Butterflys Holidays Force Tempo Traveller KL 40 E 6604",
-      "caption": "Force Tempo Traveller (KL 40 E 6604) – 14 to 26 Seater AC Group Tour Van",
-      "badge": "Tempo Traveller",
-      "label": "Force Tempo Traveller – KL 40 E 6604",
+      "alt": "Butterflys Holidays Mini Bus 24-26 Seater AC Push Back KL 40 E 6604",
+      "caption": "Mini Bus / Force Tempo Traveller (KL 40 E 6604) – 24 & 26 Seater AC Push Back Group Tour Bus",
+      "badge": "Mini Bus",
+      "label": "24 / 26 Seater Mini Bus – KL 40 E 6604",
       "iconType": "car"
     },
     {
@@ -103,6 +103,53 @@
       "caption": "Luxury Dark Grey Tempo Traveller – Premium City & Airport Pickup",
       "badge": "Luxury Edition",
       "label": "Luxury Dark Grey Traveller",
+      "iconType": "car"
+    },
+    {
+      "type": "video",
+      "category": "minibus",
+      "video": "assets/videos/v1.mp4",
+      "src": "assets/images/gallery/img12.jpeg",
+      "alt": "Butterflys Holidays Fleet Tour Video Showcase",
+      "caption": "Butterflys Holidays Official Fleet & Tour Video Showcase",
+      "badge": "Tour Video",
+      "label": "Butterflys Fleet in Action",
+      "iconType": "car"
+    },
+    {
+      "category": "minibus",
+      "src": "assets/images/gallery/img12.jpeg",
+      "alt": "Butterflys Holidays Executive Mini Bus Fleet",
+      "caption": "Executive 24-Seater AC Pushback Mini Bus – Group Touring & Special Events",
+      "badge": "Mini Bus",
+      "label": "24-Seater Executive Mini Bus",
+      "iconType": "car"
+    },
+    {
+      "category": "traveller",
+      "src": "assets/images/gallery/img13.jpeg",
+      "alt": "Butterflys Holidays Force Tempo Traveller Outstation Tour",
+      "caption": "Force Tempo Traveller – Outstation & Family Tour Travel",
+      "badge": "Tempo Traveller",
+      "label": "Force Tempo Traveller Tour",
+      "iconType": "car"
+    },
+    {
+      "category": "suv",
+      "src": "assets/images/gallery/img14.jpeg",
+      "alt": "Butterflys Holidays SUV Family Tour Companion",
+      "caption": "Spacious Tour SUV – Comfortable Long Highway Ride",
+      "badge": "Tavera SUV",
+      "label": "Premium Family Tour SUV",
+      "iconType": "car"
+    },
+    {
+      "category": "luxury",
+      "src": "assets/images/gallery/img15.jpeg",
+      "alt": "Butterflys Holidays Luxury Executive Fleet Van",
+      "caption": "Luxury Executive Tour Van – Premium Airport & Outstation Travel",
+      "badge": "Luxury Edition",
+      "label": "Executive Luxury Tour Van",
       "iconType": "car"
     }
   ],

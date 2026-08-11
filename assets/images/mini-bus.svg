@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bus-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091424"/>
+      <stop offset="50%" stop-color="#112240"/>
+      <stop offset="100%" stop-color="#050e1a"/>
+    </linearGradient>
+    <linearGradient id="bus-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="35%" stop-color="#1e293b"/>
+      <stop offset="70%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="bus-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="ac-unit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <radialGradient id="bus-light" cx="0%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="450" rx="16" fill="url(#bus-bg)"/>
+  <line x1="30" y1="365" x2="770" y2="365" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/>
+  <ellipse cx="400" cy="370" rx="360" ry="22" fill="#020610" opacity="0.85"/>
+
+  <!-- Headlight beam projection -->
+  <polygon points="100,295 0,250 0,345 100,315" fill="url(#bus-light)"/>
+
+  <!-- Roof Air Conditioner (AC) Unit -->
+  <path d="M 280 85 L 560 85 Q 580 85 570 98 L 270 98 Q 260 85 280 85 Z" fill="url(#ac-unit)" stroke="#7dd3fc" stroke-width="1.5"/>
+  <rect x="310" y="89" width="60" height="5" rx="2" fill="#e0f2fe" opacity="0.7"/>
+  <rect x="390" y="89" width="60" height="5" rx="2" fill="#e0f2fe" opacity="0.7"/>
+  <rect x="470" y="89" width="60" height="5" rx="2" fill="#e0f2fe" opacity="0.7"/>
+
+  <!-- Mini Bus Main Body (Aerodynamic Coach Profile) -->
+  <path d="M95 295 Q105 210 150 160 Q180 98 240 98 L735 98 Q765 98 765 135 L765 300 L750 330 Q735 340 695 340 L640 340 Q620 285 565 285 Q510 285 490 340 L300 340 Q280 285 225 285 Q170 285 150 340 L85 340 Q65 340 65 310 L75 295 Q85 290 95 295 Z" fill="url(#bus-body)" stroke="#475569" stroke-width="2"/>
+
+  <!-- Front Windshield & Side Driver Window -->
+  <path d="M 160 110 L 220 110 L 220 185 L 125 185 Q 145 135 160 110 Z" fill="url(#bus-glass)" stroke="#38bdf8" stroke-width="1.5"/>
+
+  <!-- Executive Passenger Panoramic Windows (Large 5-Bay Coach Glass) -->
+  <rect x="232" y="110" width="85" height="75" rx="5" fill="url(#bus-glass)" stroke="#38bdf8" stroke-width="1.5"/>
+  <rect x="327" y="110" width="85" height="75" rx="5" fill="url(#bus-glass)" stroke="#38bdf8" stroke-width="1.5"/>
+  <rect x="422" y="110" width="85" height="75" rx="5" fill="url(#bus-glass)" stroke="#38bdf8" stroke-width="1.5"/>
+  <rect x="517" y="110" width="85" height="75" rx="5" fill="url(#bus-glass)" stroke="#38bdf8" stroke-width="1.5"/>
+  <rect x="612" y="110" width="135" height="75" rx="5" fill="url(#bus-glass)" stroke="#38bdf8" stroke-width="1.5"/>
+
+  <!-- Gold/Teal Side Accent Line -->
+  <path d="M 95 240 L 760 240 L 760 246 L 95 246 Z" fill="#f4961b"/>
+  <path d="M 115 250 L 760 250 L 760 253 L 115 253 Z" fill="#0284c7"/>
+
+  <!-- Front Grille & Headlights -->
+  <ellipse cx="90" cy="290" rx="14" ry="11" fill="#38bdf8"/>
+  <rect x="85" y="305" width="25" height="6" rx="2" fill="#f4961b"/>
+  <rect x="758" y="245" width="7" height="55" rx="3" fill="#ef4444"/>
+
+  <!-- Wheel Assemblies -->
+  <!-- Front Wheel -->
+  <circle cx="188" cy="338" r="52" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="188" cy="338" r="30" fill="#1e293b"/>
+  <circle cx="188" cy="338" r="13" fill="#94a3b8"/>
+  <line x1="188" y1="308" x2="188" y2="368" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="158" y1="338" x2="218" y2="338" stroke="#cbd5e1" stroke-width="2.5"/>
+
+  <!-- Rear Dual Wheels -->
+  <circle cx="528" cy="338" r="52" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="528" cy="338" r="30" fill="#1e293b"/>
+  <circle cx="528" cy="338" r="13" fill="#94a3b8"/>
+  <line x1="528" y1="308" x2="528" y2="368" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="498" y1="338" x2="558" y2="338" stroke="#cbd5e1" stroke-width="2.5"/>
+
+  <circle cx="578" cy="338" r="52" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <circle cx="578" cy="338" r="30" fill="#1e293b"/>
+  <circle cx="578" cy="338" r="13" fill="#94a3b8"/>
+  <line x1="578" y1="308" x2="578" y2="368" stroke="#cbd5e1" stroke-width="2.5"/>
+  <line x1="548" y1="338" x2="608" y2="338" stroke="#cbd5e1" stroke-width="2.5"/>
+
+  <!-- Text Header Overlay -->
+  <text x="50" y="52" fill="#f8fafc" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" opacity="0.95">EXECUTIVE MINI BUS</text>
+  <text x="50" y="76" fill="#38bdf8" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="1">LUXURY MINI BUS (24 • 26 SEAT AC PUSH BACK)</text>
+</svg>

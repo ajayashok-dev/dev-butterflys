@@ -69,6 +69,6 @@
   <line x1="540" y1="305" x2="540" y2="365" stroke="#cbd5e1" stroke-width="2.5"/>
   <line x1="510" y1="335" x2="570" y2="335" stroke="#cbd5e1" stroke-width="2.5"/>
 
-  <text x="50" y="55" fill="#f8fafc" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" opacity="0.9">GROUP TOURING VAN</text>
-  <text x="50" y="80" fill="#f4961b" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="1">FORCE TEMPO TRAVELLER (14 • 17 • 20 • 26 SEAT)</text>
+  <text x="50" y="55" fill="#f8fafc" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="700" opacity="0.9">TEMPO TRAVELLER LUXURY VAN</text>
+  <text x="50" y="80" fill="#f4961b" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="1">FORCE TEMPO TRAVELLER (14 • 17 • 20 SEAT AC)</text>
 </svg>

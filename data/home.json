@@ -284,9 +284,30 @@
         "datacar": "Tempo Traveller 20 Seat"
       },
       {
+        "id": "minibus-24",
+        "category": "minibus",
+        "image": "assets/images/mini-bus.svg",
+        "alt": "Mini Bus 24 Seat AC Push Back",
+        "tag": "24 Seater AC",
+        "name": "Mini Bus (24 Seater AC Push Back)",
+        "passengers": "24 Passengers",
+        "luggage": "Luggage Space & Carrier",
+        "ridePackage": "Up to 80 km ride included",
+        "features": [
+          "24 Seat AC Push Back Recliners",
+          "Luxury Executive & Group Touring",
+          "Extra km charges applicable after 80 km"
+        ],
+        "price": "₹7,000",
+        "priceLabel": "Starting From",
+        "priceNote": "*Includes 80 km ride",
+        "inquireLabel": "Book Cab",
+        "datacar": "Mini Bus 24 Seat AC Push Back"
+      },
+      {
         "id": "traveller-26",
-        "category": "traveller",
-        "image": "assets/images/tempo-traveller.svg",
+        "category": "minibus",
+        "image": "assets/images/mini-bus.svg",
         "alt": "Force Tempo Traveller 26 Seater",
         "tag": "26 Seater Mini Bus",
         "name": "Force Tempo Traveller (26 Seater)",
@@ -377,6 +398,10 @@
       {
         "value": "Force Tempo Traveller (20 Seater)",
         "label": "Tempo Traveller 20 Seater (Min ₹5,500)"
+      },
+      {
+        "value": "Mini Bus 24 Seat AC Push Back",
+        "label": "Mini Bus 24 Seat AC Push Back (Min ₹7,000)"
       },
       {
         "value": "Force Tempo Traveller (26 Seater)",
